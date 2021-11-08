@@ -17,14 +17,27 @@ namespace Entidades
         /// <returns></returns>
         public static bool SoloLetras(string cadena)
         {
-            foreach (Char item in cadena.ToCharArray())
+            bool flag = false;
+            foreach (Char item in cadena.ToCharArray() )
             {
-                if(/*Char.IsDigit(item) &&*/ Char.IsLetter(item))
+                if(Char.IsLetter(item) || char.IsSeparator(item))
                 {
-                    return true;
+                    flag = true;
+                }
+                else
+                {
+                    flag = false;
                 }
             }
-            return false;
+            if(flag)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
         }
 
         /// <summary>

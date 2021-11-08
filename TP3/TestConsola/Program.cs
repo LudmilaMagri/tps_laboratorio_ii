@@ -27,7 +27,6 @@ namespace TestConsola
             }
             string fruto = "Seco";
             List<PlantaConFruto> listaFiltrada = new List<PlantaConFruto>();
-            //List<PlantaConFruto> listaConFruto = CargaDeDatos.RetornarListaConFruto();
 
             listaFiltrada = PlantaConFruto.FiltrarFruto(listaConFrutos, fruto);
 

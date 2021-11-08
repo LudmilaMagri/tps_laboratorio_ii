@@ -67,6 +67,8 @@ namespace Formularios
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConFruto)).BeginInit();
@@ -137,7 +139,7 @@ namespace Formularios
             this.btnGuardarXml.Location = new System.Drawing.Point(591, 487);
             this.btnGuardarXml.Name = "btnGuardarXml";
             this.btnGuardarXml.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarXml.TabIndex = 67;
+            this.btnGuardarXml.TabIndex = 15;
             this.btnGuardarXml.Text = "Guardar Cambios XML";
             this.btnGuardarXml.UseVisualStyleBackColor = false;
             this.btnGuardarXml.Click += new System.EventHandler(this.btnGuardarXml_Click);
@@ -161,7 +163,7 @@ namespace Formularios
             this.btnGuardarCambios.Location = new System.Drawing.Point(391, 487);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarCambios.TabIndex = 66;
+            this.btnGuardarCambios.TabIndex = 14;
             this.btnGuardarCambios.Text = "Guardar Cambios Json";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click_1);
@@ -230,7 +232,7 @@ namespace Formularios
             this.btnLimpiar.Location = new System.Drawing.Point(107, 487);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(129, 42);
-            this.btnLimpiar.TabIndex = 57;
+            this.btnLimpiar.TabIndex = 12;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -270,7 +272,7 @@ namespace Formularios
             this.btnEditar.Location = new System.Drawing.Point(463, 410);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(166, 29);
-            this.btnEditar.TabIndex = 26;
+            this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -285,7 +287,7 @@ namespace Formularios
             this.btnEliminar.Location = new System.Drawing.Point(232, 440);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 39);
-            this.btnEliminar.TabIndex = 25;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -304,7 +306,7 @@ namespace Formularios
             this.txtTipoFruto.Location = new System.Drawing.Point(147, 391);
             this.txtTipoFruto.Name = "txtTipoFruto";
             this.txtTipoFruto.Size = new System.Drawing.Size(121, 23);
-            this.txtTipoFruto.TabIndex = 21;
+            this.txtTipoFruto.TabIndex = 8;
             // 
             // btnGuardarEdit
             // 
@@ -316,7 +318,7 @@ namespace Formularios
             this.btnGuardarEdit.Location = new System.Drawing.Point(128, 440);
             this.btnGuardarEdit.Name = "btnGuardarEdit";
             this.btnGuardarEdit.Size = new System.Drawing.Size(88, 39);
-            this.btnGuardarEdit.TabIndex = 20;
+            this.btnGuardarEdit.TabIndex = 10;
             this.btnGuardarEdit.Text = "Guardar Edit";
             this.btnGuardarEdit.UseVisualStyleBackColor = false;
             this.btnGuardarEdit.Click += new System.EventHandler(this.btnGuardarEdit_Click);
@@ -332,11 +334,12 @@ namespace Formularios
             // 
             // cmbColorFlor
             // 
+            this.cmbColorFlor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColorFlor.FormattingEnabled = true;
             this.cmbColorFlor.Location = new System.Drawing.Point(147, 105);
             this.cmbColorFlor.Name = "cmbColorFlor";
             this.cmbColorFlor.Size = new System.Drawing.Size(121, 23);
-            this.cmbColorFlor.TabIndex = 18;
+            this.cmbColorFlor.TabIndex = 1;
             // 
             // dgvConFruto
             // 
@@ -346,7 +349,7 @@ namespace Formularios
             this.dgvConFruto.ReadOnly = true;
             this.dgvConFruto.RowTemplate.Height = 25;
             this.dgvConFruto.Size = new System.Drawing.Size(447, 339);
-            this.dgvConFruto.TabIndex = 17;
+            this.dgvConFruto.TabIndex = 16;
             // 
             // label9
             // 
@@ -407,42 +410,42 @@ namespace Formularios
             this.txtAltura.Location = new System.Drawing.Point(147, 354);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(121, 23);
-            this.txtAltura.TabIndex = 10;
+            this.txtAltura.TabIndex = 7;
             // 
             // txtCantidadAgua
             // 
             this.txtCantidadAgua.Location = new System.Drawing.Point(147, 316);
             this.txtCantidadAgua.Name = "txtCantidadAgua";
             this.txtCantidadAgua.Size = new System.Drawing.Size(121, 23);
-            this.txtCantidadAgua.TabIndex = 9;
+            this.txtCantidadAgua.TabIndex = 6;
             // 
             // txtCicloVida
             // 
             this.txtCicloVida.Location = new System.Drawing.Point(147, 276);
             this.txtCicloVida.Name = "txtCicloVida";
             this.txtCicloVida.Size = new System.Drawing.Size(121, 23);
-            this.txtCicloVida.TabIndex = 8;
+            this.txtCicloVida.TabIndex = 5;
             // 
             // txtOrigen
             // 
             this.txtOrigen.Location = new System.Drawing.Point(147, 233);
             this.txtOrigen.Name = "txtOrigen";
             this.txtOrigen.Size = new System.Drawing.Size(121, 23);
-            this.txtOrigen.TabIndex = 7;
+            this.txtOrigen.TabIndex = 4;
             // 
             // txtFamilia
             // 
             this.txtFamilia.Location = new System.Drawing.Point(147, 189);
             this.txtFamilia.Name = "txtFamilia";
             this.txtFamilia.Size = new System.Drawing.Size(121, 23);
-            this.txtFamilia.TabIndex = 6;
+            this.txtFamilia.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(147, 148);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 23);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 2;
             // 
             // btnAlta
             // 
@@ -454,7 +457,7 @@ namespace Formularios
             this.btnAlta.Location = new System.Drawing.Point(25, 440);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(85, 41);
-            this.btnAlta.TabIndex = 2;
+            this.btnAlta.TabIndex = 9;
             this.btnAlta.Text = "Agregar Planta";
             this.btnAlta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAlta.UseVisualStyleBackColor = false;
@@ -463,12 +466,34 @@ namespace Formularios
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 44);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(309, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 18);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "(Angiosperma)";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(313, 40);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Plantas Con Frutos";
             // 
             // btnClose
             // 
@@ -497,6 +522,7 @@ namespace Formularios
             this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConFruto)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -542,5 +568,7 @@ namespace Formularios
         private System.Windows.Forms.Label lblCatchOrigen;
         private System.Windows.Forms.Button btnGuardarXml;
         private System.Windows.Forms.Button btnGuardarCambios;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

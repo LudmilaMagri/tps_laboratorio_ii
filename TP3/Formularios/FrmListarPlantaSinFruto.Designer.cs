@@ -63,6 +63,8 @@ namespace Formularios
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarSinFruto)).BeginInit();
@@ -121,7 +123,7 @@ namespace Formularios
             this.btnGuardarXml.Location = new System.Drawing.Point(585, 496);
             this.btnGuardarXml.Name = "btnGuardarXml";
             this.btnGuardarXml.Size = new System.Drawing.Size(98, 51);
-            this.btnGuardarXml.TabIndex = 65;
+            this.btnGuardarXml.TabIndex = 14;
             this.btnGuardarXml.Text = "Guardar Cambios XML";
             this.btnGuardarXml.UseVisualStyleBackColor = false;
             this.btnGuardarXml.Click += new System.EventHandler(this.btnGuardarXml_Click);
@@ -190,7 +192,7 @@ namespace Formularios
             this.btnLimpiar.Location = new System.Drawing.Point(88, 496);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(140, 42);
-            this.btnLimpiar.TabIndex = 58;
+            this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -205,7 +207,7 @@ namespace Formularios
             this.btnGuardarCambios.Location = new System.Drawing.Point(385, 496);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(98, 51);
-            this.btnGuardarCambios.TabIndex = 57;
+            this.btnGuardarCambios.TabIndex = 13;
             this.btnGuardarCambios.Text = "Guardar Cambios Json";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
@@ -220,7 +222,7 @@ namespace Formularios
             this.btnEditar.Location = new System.Drawing.Point(460, 409);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(166, 29);
-            this.btnEditar.TabIndex = 25;
+            this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -235,7 +237,7 @@ namespace Formularios
             this.btnEliminar.Location = new System.Drawing.Point(223, 444);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 44);
-            this.btnEliminar.TabIndex = 24;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -275,7 +277,7 @@ namespace Formularios
             this.btnGuardarEdit.Location = new System.Drawing.Point(119, 444);
             this.btnGuardarEdit.Name = "btnGuardarEdit";
             this.btnGuardarEdit.Size = new System.Drawing.Size(83, 45);
-            this.btnGuardarEdit.TabIndex = 20;
+            this.btnGuardarEdit.TabIndex = 9;
             this.btnGuardarEdit.Text = "GuardarEdit";
             this.btnGuardarEdit.UseVisualStyleBackColor = false;
             this.btnGuardarEdit.Click += new System.EventHandler(this.btnGuardarEdit_Click);
@@ -291,11 +293,12 @@ namespace Formularios
             // 
             // cmbTipoPlanta
             // 
+            this.cmbTipoPlanta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPlanta.FormattingEnabled = true;
             this.cmbTipoPlanta.Location = new System.Drawing.Point(147, 101);
             this.cmbTipoPlanta.Name = "cmbTipoPlanta";
             this.cmbTipoPlanta.Size = new System.Drawing.Size(121, 23);
-            this.cmbTipoPlanta.TabIndex = 18;
+            this.cmbTipoPlanta.TabIndex = 1;
             // 
             // dgvListarSinFruto
             // 
@@ -305,7 +308,7 @@ namespace Formularios
             this.dgvListarSinFruto.ReadOnly = true;
             this.dgvListarSinFruto.RowTemplate.Height = 25;
             this.dgvListarSinFruto.Size = new System.Drawing.Size(447, 339);
-            this.dgvListarSinFruto.TabIndex = 17;
+            this.dgvListarSinFruto.TabIndex = 15;
             // 
             // label6
             // 
@@ -366,42 +369,42 @@ namespace Formularios
             this.txtAltura.Location = new System.Drawing.Point(147, 388);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(121, 23);
-            this.txtAltura.TabIndex = 10;
+            this.txtAltura.TabIndex = 7;
             // 
             // txtCantAgua
             // 
             this.txtCantAgua.Location = new System.Drawing.Point(147, 341);
             this.txtCantAgua.Name = "txtCantAgua";
             this.txtCantAgua.Size = new System.Drawing.Size(121, 23);
-            this.txtCantAgua.TabIndex = 9;
+            this.txtCantAgua.TabIndex = 6;
             // 
             // txtCicloVida
             // 
             this.txtCicloVida.Location = new System.Drawing.Point(147, 292);
             this.txtCicloVida.Name = "txtCicloVida";
             this.txtCicloVida.Size = new System.Drawing.Size(121, 23);
-            this.txtCicloVida.TabIndex = 8;
+            this.txtCicloVida.TabIndex = 5;
             // 
             // txtOrigen
             // 
             this.txtOrigen.Location = new System.Drawing.Point(147, 244);
             this.txtOrigen.Name = "txtOrigen";
             this.txtOrigen.Size = new System.Drawing.Size(121, 23);
-            this.txtOrigen.TabIndex = 7;
+            this.txtOrigen.TabIndex = 4;
             // 
             // txtFamilia
             // 
             this.txtFamilia.Location = new System.Drawing.Point(147, 195);
             this.txtFamilia.Name = "txtFamilia";
             this.txtFamilia.Size = new System.Drawing.Size(121, 23);
-            this.txtFamilia.TabIndex = 6;
+            this.txtFamilia.TabIndex = 3;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(147, 149);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 23);
-            this.txtNombre.TabIndex = 5;
+            this.txtNombre.TabIndex = 2;
             // 
             // btnAlta
             // 
@@ -413,7 +416,7 @@ namespace Formularios
             this.btnAlta.Location = new System.Drawing.Point(16, 444);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(85, 46);
-            this.btnAlta.TabIndex = 2;
+            this.btnAlta.TabIndex = 8;
             this.btnAlta.Text = "Agregar Planta";
             this.btnAlta.UseVisualStyleBackColor = false;
             this.btnAlta.Click += new System.EventHandler(this.btnAlta_Click);
@@ -421,12 +424,34 @@ namespace Formularios
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(172)))), ((int)(((byte)(149)))));
+            this.pnlSuperior.Controls.Add(this.label10);
+            this.pnlSuperior.Controls.Add(this.label9);
             this.pnlSuperior.Controls.Add(this.btnClose);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(801, 44);
             this.pnlSuperior.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Book Antiqua", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(302, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 18);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "(Gymnosperma)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Book Antiqua", 25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(7, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(301, 40);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Plantas Sin Frutos";
             // 
             // btnClose
             // 
@@ -454,6 +479,7 @@ namespace Formularios
             this.pnlPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarSinFruto)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
+            this.pnlSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
@@ -495,5 +521,7 @@ namespace Formularios
         private System.Windows.Forms.Label lblCatchOrigen;
         private System.Windows.Forms.Label lblCatchFamilia;
         private System.Windows.Forms.Button btnGuardarXml;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

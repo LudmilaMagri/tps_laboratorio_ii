@@ -72,7 +72,7 @@ namespace Entidades
             listaPlantaSinFruto.Add(new PlantaSinFruto("Araucaria araucana", "Araucariaceae", "Nativa", 1000, 50000, PlantaSinFruto.ETipoPlanta.Arbol, 3000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Juniperus deppeana", "Cupressaceae", "America", 500, 25000, PlantaSinFruto.ETipoPlanta.Arbol, 2000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Taxus globosa", "Taxaceae", "America", 10, 10000, PlantaSinFruto.ETipoPlanta.Arbusto, 800));
-            listaPlantaSinFruto.Add(new PlantaSinFruto("Ginkgo biloba", " Ginkgoaceae", "Asia", 1200, 10000, PlantaSinFruto.ETipoPlanta.Arbol, 3000));
+            listaPlantaSinFruto.Add(new PlantaSinFruto("Ginkgo biloba", "Ginkgoaceae", "Asia", 1200, 10000, PlantaSinFruto.ETipoPlanta.Arbol, 3000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Pinus uncinata", "Pinaceas", "Europa", 1000, 6000, PlantaSinFruto.ETipoPlanta.Arbol, 4000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Pinus cembra", "Pinaceas", "Europa", 1600, 5000, PlantaSinFruto.ETipoPlanta.Arbol, 2500));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Juniperus chinensis", "Cupressaceae", "Asia", 1000, 5000, PlantaSinFruto.ETipoPlanta.Arbol, 1500));
@@ -85,10 +85,10 @@ namespace Entidades
         public static void CargarPlantaMusgo()
         {
             listaPlantaMusgo.Add(new PlantaMusgo("Weymouthia mollis", "Lembophyllaceae", "America", 100, 6000, 1000));
-            listaPlantaMusgo.Add(new PlantaMusgo("Dendroligotrichum dendroides", "Polytrichaceae ", "America", 500, 4000, 3000));
-            listaPlantaMusgo.Add(new PlantaMusgo("Sphagnum magellanicum", " Sphagnaceae", "Nativa", 200, 1000, 200000));
-            listaPlantaMusgo.Add(new PlantaMusgo("Archidium alternifolium", " Archidiaceae", "Nativa", 300, 1000, 2060));
-            listaPlantaMusgo.Add(new PlantaMusgo("Andreaea rupestris", " Andreaeaceae", "Europa", 600, 4000, 15000));
+            listaPlantaMusgo.Add(new PlantaMusgo("Dendroligotrichum dendroides", "Polytrichaceae", "America", 500, 4000, 3000));
+            listaPlantaMusgo.Add(new PlantaMusgo("Sphagnum magellanicum", "Sphagnaceae", "Nativa", 200, 1000, 200000));
+            listaPlantaMusgo.Add(new PlantaMusgo("Archidium alternifolium", "Archidiaceae", "Nativa", 300, 1000, 2060));
+            listaPlantaMusgo.Add(new PlantaMusgo("Andreaea rupestris", "Andreaeaceae", "Europa", 600, 4000, 15000));
         }
 
         /// <summary>
@@ -105,7 +105,6 @@ namespace Entidades
             {
                 CargarPlantaConFruto();
                 Archivos<List<PlantaConFruto>>.EscribirXml(listaPlantaConFruto, "Planta_Con_Fruto");
-               // Archivos<List<PlantaConFruto>>.EscribirJson(listaPlantaConFruto, "Planta_Con_Fruto_Json");
             }
             else
             {

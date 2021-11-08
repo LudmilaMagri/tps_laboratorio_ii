@@ -223,6 +223,7 @@ namespace Formularios
             txtCantidadAgua.Clear();
             txtIdPlanta.Clear();
             txtAltura.Clear();
+            txtTipoFruto.Clear();
             lblMensaje.Text = " ";
             lblCatchAltura.Text = " ";
             lblCatchCantAgua.Text = " ";
