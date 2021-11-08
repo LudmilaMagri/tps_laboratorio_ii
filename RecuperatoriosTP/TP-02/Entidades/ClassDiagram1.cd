@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Ciclomotor">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <InheritanceLine Type="Entidades.Vehiculo" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="2.438" />
+        <Point X="5.917" Y="2.438" Type="JumpStart" />
+        <Point X="6.083" Y="2.438" Type="JumpEnd" />
+        <Point X="6.25" Y="2.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ciclomotor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Sedan">
+    <Position X="9" Y="2" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Entidades.Sedan.ETipo">
+        <TypeIdentifier>
+          <NewMemberFileName>Sedan.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sedan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Suv">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Suv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Taller">
+    <Position X="0.75" Y="4" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Entidades.Taller.ETipo">
+        <TypeIdentifier>
+          <NewMemberFileName>Taller.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAEQAEAAAAABAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Taller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Vehiculo">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Entidades.Vehiculo.EMarca" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Vehiculo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Entidades.Vehiculo.ETamanio" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Vehiculo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQQgAAAAAQAAAACAAAAAACAAAAAAAAAAiA=</HashCode>
+      <FileName>Vehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
