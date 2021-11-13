@@ -165,7 +165,38 @@ namespace Entidades
             }
             return true;
         }
+        public static bool EscribirTxtPorcentaje(List<PlantaSinFruto> datos, string nombreArchivo, float porcentaje)
+        {
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ruta += @"\Archivos\";
+            string archivo = ruta + $"{nombreArchivo}" + ".txt";
 
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+            using (StreamWriter escribir = new StreamWriter(archivo))
+            {
+                if (datos != null)
+                {
+                    escribir.WriteLine("EL PORCENTAJE CALCULADO ES : " + porcentaje + "%");
+                    escribir.WriteLine("\n\n--------------------------------------------------");
+                    escribir.WriteLine("\n RESULTADO: ");
+
+                    foreach (PlantaSinFruto item in datos)
+                    {
+                        escribir.WriteLine(item.ToString());
+                        escribir.WriteLine("\n*******************************************");
+                    }
+                }
+                else
+                {
+                    throw new EscribirTxtExceptionSinFruto();
+                }
+
+            }
+            return true;
+        }
         /// <summary>
         /// Busca el ultimo id de la lista planta sin fruto
         /// </summary>

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Entidades
 {
@@ -56,7 +57,7 @@ namespace Entidades
         {
             listaPlantaConFruto.Add(new PlantaConFruto("Lantana camara", "Verbenaceae", "Nativa", 1, 10000, PlantaConFruto.EColorFlor.roja, "Carnoso", 1000));
             listaPlantaConFruto.Add(new PlantaConFruto("Hibiscus striatus", "Malvaceae", "Nativa", 1, 50000, PlantaConFruto.EColorFlor.rosa, "Seco", 2000));
-            listaPlantaConFruto.Add(new PlantaConFruto("Sphaeralcea bonariensis", "Malvaceae", "Nativa", 1, 8000, PlantaConFruto.EColorFlor.rosa, "Seco", 1500));
+            listaPlantaConFruto.Add(new PlantaConFruto("Sphaeralcea bonariensis", "Malvaceae", "Nativa", 1, 8000, PlantaConFruto.EColorFlor.rosa, "Carnoso", 1500));
             listaPlantaConFruto.Add(new PlantaConFruto("Cucurbita maxima", "Cucurbitaceae", "America", 2, 20000, PlantaConFruto.EColorFlor.amarilla, "Carnoso", 1500));
             listaPlantaConFruto.Add(new PlantaConFruto("Helianthus annuus", "Asteraceae", "America", 1, 15000, PlantaConFruto.EColorFlor.amarilla, "Seco", 1000));
             listaPlantaConFruto.Add(new PlantaConFruto("Brugmansia arborea", "Solanaceae", "America", 2, 1000, PlantaConFruto.EColorFlor.amarilla, "Seco", 1000));
@@ -75,8 +76,6 @@ namespace Entidades
             listaPlantaSinFruto.Add(new PlantaSinFruto("Ginkgo biloba", "Ginkgoaceae", "Asia", 1200, 10000, PlantaSinFruto.ETipoPlanta.Arbol, 3000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Pinus uncinata", "Pinaceas", "Europa", 1000, 6000, PlantaSinFruto.ETipoPlanta.Arbol, 4000));
             listaPlantaSinFruto.Add(new PlantaSinFruto("Pinus cembra", "Pinaceas", "Europa", 1600, 5000, PlantaSinFruto.ETipoPlanta.Arbol, 2500));
-            listaPlantaSinFruto.Add(new PlantaSinFruto("Juniperus chinensis", "Cupressaceae", "Asia", 1000, 5000, PlantaSinFruto.ETipoPlanta.Arbol, 1500));
-            listaPlantaSinFruto.Add(new PlantaSinFruto("Ephedra triandra", "Ephedraceae", "Nativa", 500, 5000, PlantaSinFruto.ETipoPlanta.Arbusto, 2000));
            
         }
         /// <summary>

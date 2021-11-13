@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "fBtQ3Q4riKGRBCP7r6Oa+rVZfA1Pod0Vr80i1+xHPFUtrF624JuLXLnGghTk9j44zjfnJkg/Ll1vBSD1BDiT+Q==",
+  "dgSpecHash": "cXD/Ak4ZVJuFYO2dIfBNuhgr/X8DNUkqbVx/wPkmxA+M4wOvb4R9WLGpYQ6zMSKyivNMWYoilCFY7fJpAl2XYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\Entidades\\Entidades.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP3\\Entidades\\Entidades.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ludmi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\ludmi\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

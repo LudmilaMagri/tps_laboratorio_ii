@@ -146,6 +146,37 @@ namespace Entidades
             }
             return true;
         }
+        public static bool EscribirTxTPorcentaje(List<PlantaMusgo> datos, string nombreArchivo, float porcentaje)
+        {
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ruta += @"\Archivos\";
+            string archivo = ruta + $"{nombreArchivo}" + ".txt";
+
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+            using (StreamWriter escribir = new StreamWriter(archivo))
+            {
+                if (datos != null)
+                {
+                    escribir.WriteLine("EL PORCENTAJE CALCULADO ES : " + porcentaje + "%");
+                    escribir.WriteLine("\n\n--------------------------------------------------");
+                    escribir.WriteLine("\n RESULTADO: ");
+
+                    foreach (PlantaMusgo item in datos)
+                    {
+                        escribir.WriteLine(item.ToString());
+                        escribir.WriteLine("\n*******************************************");
+                    }
+                }
+                else
+                {
+                    throw new EscribirTxtExceptionMusgo();
+                }
+            }
+            return true;
+        }
 
         /// <summary>
         /// Busca el ultimo id de la lista planta musgo
@@ -164,7 +195,7 @@ namespace Entidades
         public override string ToString()
         {
             return "\nID:  " + this.Id + "\nNOMBRE: " + this.Nombre + "\nORIGEN: " + this.Origen + "\nFAMILIA: " + this.Familia + "\nCANTIDAD DE AGUA: " + this.CantidadAgua +
-               "\nAÑOS DE VIDA: " + this.AniosVida;
+               "\nAÑOS DE VIDA: " + this.AniosVida + "\nCANTIDAD DE ESPORAS: " +this.CantidadEsporas;
         }
     }
 }

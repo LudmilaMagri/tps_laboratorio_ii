@@ -47,6 +47,8 @@ namespace Formularios
                 listaFiltradaConFrutos = FiltrosGenericos.FiltrarPorOrigen(listaConFrutos, origen);
                 listaFiltradaSinFruto = FiltrosGenericos.FiltrarPorOrigen(listaSinFrutos, origen);
                 listaFiltradaMusgo = FiltrosGenericos.FiltrarPorOrigen(listaMusgos, origen);
+                float porcentaje = FiltrosGenericos.PorcentajeOrigen(listaConFrutos, listaSinFrutos, listaMusgos, cmbOrigen.Text);
+                lblMensaje.Text = "El porcentaje de Plantas con origen de " + cmbOrigen.Text + " es: " + porcentaje + "%";
 
                 ActualizarDgvConFruto(listaFiltradaConFrutos);
                 ActualizarDgvSinFruto(listaFiltradaSinFruto);
@@ -66,9 +68,12 @@ namespace Formularios
                 {
                     if (listaFiltradaSinFruto != null || listaFiltradaConFrutos != null || listaFiltradaMusgo != null)
                     {
-                        PlantaSinFruto.EscribirTxt(listaFiltradaSinFruto, "Filtrado_Origen_Plantas_SinFrutos");
-                        PlantaConFruto.EscribirTxt(listaFiltradaConFrutos, "Filtrado_Origen_Plantas_ConFrutos");
-                        PlantaMusgo.EscribirTxt(listaFiltradaMusgo, "Filtrado_Origen_Plantas_Musgos");
+                        float porcentaje = FiltrosGenericos.PorcentajeOrigen(listaConFrutos, listaSinFrutos, listaMusgos, cmbOrigen.Text);
+
+                        PlantaSinFruto.EscribirTxtPorcentaje(listaFiltradaSinFruto, "Filtrado_Origen_Plantas_SinFrutos", porcentaje);
+                        PlantaConFruto.EscribirTxtPorcentaje(listaFiltradaConFrutos, "Filtrado_Origen_Plantas_ConFrutos", porcentaje);
+                        PlantaMusgo.EscribirTxTPorcentaje(listaFiltradaMusgo, "Filtrado_Origen_Plantas_Musgos", porcentaje);
+
                         lblMensaje.Text = "Archivo de 'Filtrado Origen' generado correctamente";
                         this.ListasNulas();
                     }
@@ -150,6 +155,8 @@ namespace Formularios
             {
                 string color = cmbFlor.SelectedItem.ToString();
                 listaFiltradaConFrutos = PlantaConFruto.FiltrarColorFlor(listaConFrutos, color);
+                float porcentaje = PlantaConFruto.PorcentajeDeFLor(listaFiltradaConFrutos, listaConFrutos, color);
+                lblMensaje.Text = "El porcentaje de flores con color " + color.ToString() + " es: " + porcentaje + "%";
                 ActualizarDgvConFruto(listaFiltradaConFrutos);
             }
             else
@@ -168,6 +175,9 @@ namespace Formularios
                     if (listaFiltradaConFrutos != null)
                     {
                         PlantaConFruto.EscribirTxt(listaFiltradaConFrutos, "Filtrado_ColorFlor_Plantas_ConFrutos");
+                        float porcentaje = PlantaConFruto.PorcentajeDeFLor(listaFiltradaConFrutos, listaConFrutos, cmbFlor.Text);
+
+                        PlantaConFruto.EscribirTxtPorcentaje(listaFiltradaConFrutos, "Filtrado_ColorFlor_Plantas_ConFrutos", porcentaje);
                         lblMensaje.Text = "Archivo de 'Filtrado ColorFlor' generado correctamente";
                         this.ListasNulas();
                     }
@@ -191,6 +201,8 @@ namespace Formularios
                 string fruto = cmbFruto.SelectedItem.ToString();
                 listaFiltradaConFrutos = PlantaConFruto.FiltrarFruto(listaConFrutos, fruto);
                 ActualizarDgvConFruto(listaFiltradaConFrutos);
+                float resultado = PlantaConFruto.PorcentajeDeFrutos(listaFiltradaConFrutos, listaConFrutos, fruto);
+                lblMensaje.Text = "El porcentaje de plantas con fruto " + fruto + " es: " + resultado + "%";
             }
             else
             {
@@ -299,6 +311,72 @@ namespace Formularios
             this.Close();
         }
 
-        
+        private void btnPorcentajeTipoPlanta_Click(object sender, EventArgs e)
+        {
+            float resultado = 0;
+            if(cmbTipoPlanta.SelectedItem != null)
+            resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
+
+            lblMensaje.Text = "El porcentaje de Plantas " +cmbTipoPlanta.SelectedItem.ToString()+ " es: " + resultado + "%";
+        }
+
+        private void btnExportPorcentaje_Click(object sender, EventArgs e)
+        {
+            float resultado = 0;
+            try
+            {
+                if (cmbTipoPlanta != null)
+                {
+                    resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
+                    switch (cmbTipoPlanta.SelectedItem)
+                    {
+                        case "Con Fruto":
+                            PlantaConFruto.EscribirTxtPorcentaje(listaConFrutos, "Porcentaje_PlantaConFruto", resultado);
+                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaConFruto' generado correctamente";
+                            break;
+
+                        case "Sin Fruto":
+                            PlantaSinFruto.EscribirTxtPorcentaje(listaSinFrutos, "Porcentaje_PlantaSinFruto", resultado);
+                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaSinFruto' generado correctamente";
+                            break;
+                        case "Musgo":
+                            PlantaMusgo.EscribirTxTPorcentaje(listaMusgos, "Porcentaje_PlantaMusgo", resultado);
+                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaMusgo' generado correctamente";
+                            break;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "Seleccione un tipo de planta";
+                }
+            }
+            catch(EscribirTxtExceptionConFruto)
+            {
+                EscribirTxtExceptionConFruto ex = new EscribirTxtExceptionConFruto();
+                lblMensaje.Text = ex.Message.ToString();
+            }
+            catch(EscribirTxtExceptionSinFruto)
+            {
+                EscribirTxtExceptionSinFruto ex = new EscribirTxtExceptionSinFruto();
+                lblMensaje.Text = ex.Message.ToString();
+            }
+            catch(EscribirTxtExceptionMusgo)
+            {
+                EscribirTxtExceptionMusgo ex = new EscribirTxtExceptionMusgo();
+                lblMensaje.Text = ex.Message.ToString();
+            }
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvMostrarConFruto.DataSource = null;
+            dgvSinFruto.DataSource = null;
+            dgvMusgos.DataSource = null;
+            dgvMostrarConFruto.DataSource = listaConFrutos;
+            dgvSinFruto.DataSource = listaSinFrutos;
+            dgvMusgos.DataSource = listaMusgos;
+            lblMensaje.Text = " ";
+        }
     }
 }

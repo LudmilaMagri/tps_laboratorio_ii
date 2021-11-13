@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\Excepciones\\Excepciones.csproj",
+      "projectUniqueName": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP3\\Excepciones\\Excepciones.csproj",
       "projectName": "Excepciones",
-      "projectPath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\Excepciones\\Excepciones.csproj",
+      "projectPath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP3\\Excepciones\\Excepciones.csproj",
       "packagesPath": "C:\\Users\\ludmi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\Excepciones\\obj\\",
+      "outputPath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP3\\Excepciones\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

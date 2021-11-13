@@ -158,6 +158,19 @@ namespace Entidades
             listaFiltrada = lista.Where(p => p.ColorFlor.ToString() == color).ToList();
             return listaFiltrada;
         }
+        public static float PorcentajeDeFLor(List<PlantaConFruto> listaFiltradaDeFrutos, List<PlantaConFruto> listaTotal, string florSeleccionada)
+        {
+            List<PlantaConFruto> listaFiltrada = FiltrarColorFlor(listaFiltradaDeFrutos, florSeleccionada);
+            float cantidadTotal = listaTotal.Count;
+            float porcentaje = 100;
+            float porcentajeTotal = 0;
+
+            porcentajeTotal = (listaFiltrada.Count * porcentaje) / cantidadTotal;
+                  
+            return porcentajeTotal;
+        }
+
+
         /// <summary>
         /// Busca la planta por el fruto seleccionado
         /// </summary>
@@ -170,8 +183,32 @@ namespace Entidades
             listaFiltrada = lista.Where(p => p.Fruto == fruto).ToList();
             return listaFiltrada;
         }
+        /// <summary>
+        /// Calcula el porcentaje del fruto seleccionado
+        /// </summary>
+        /// <param name="listaFiltradaDeFrutos"></param>
+        /// <param name="listaTotal"></param>
+        /// <param name="frutoSeleccionado"></param>
+        /// <returns>retorna el porcentaje</returns>
+        public static float PorcentajeDeFrutos(List<PlantaConFruto> listaFiltradaDeFrutos, List<PlantaConFruto> listaTotal , string frutoSeleccionado)
+        {
+            List<PlantaConFruto> listaFiltrada = FiltrarFruto(listaFiltradaDeFrutos, frutoSeleccionado);
+            float cantidadTotal = listaTotal.Count;
+            float porcentaje = 100;
+            float porcentajeTotal = 0;
 
-        
+            switch (frutoSeleccionado)
+            {
+                case "Seco":
+                    porcentajeTotal = (listaFiltrada.Count * porcentaje) / cantidadTotal;
+                    break;
+
+                case "Carnoso":
+                    porcentajeTotal = (listaFiltrada.Count * porcentaje) / cantidadTotal;
+                    break;
+            }
+            return porcentajeTotal;
+        }
         /// <summary>
         /// Busca el ultimo id de la lista planta con fruto
         /// </summary>
@@ -220,6 +257,38 @@ namespace Entidades
             
         }
 
+        public static bool EscribirTxtPorcentaje(List<PlantaConFruto> datos, string nombreArchivo, float porcentaje)
+        {
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ruta += @"\Archivos\";
+            string archivo = ruta + $"{nombreArchivo}" + ".txt";
+
+            if (!Directory.Exists(ruta))
+            {
+                Directory.CreateDirectory(ruta);
+            }
+            using (StreamWriter escribir = new StreamWriter(archivo))
+            {
+                if (datos != null)
+                {
+                    escribir.WriteLine("EL PORCENTAJE CALCULADO ES : " + porcentaje+ "%");
+                    escribir.WriteLine("\n\n--------------------------------------------------");
+                    escribir.WriteLine("\n RESULTADO: ");
+
+                    foreach (PlantaConFruto item in datos)
+                    {
+                        escribir.WriteLine(item.ToString());
+                        escribir.WriteLine("\n*******************************************");
+                    }
+                }
+                else
+                {
+                    throw new EscribirTxtExceptionConFruto();
+                }
+            }
+            return true;
+
+        }
 
         public override string ToString()
         { 
