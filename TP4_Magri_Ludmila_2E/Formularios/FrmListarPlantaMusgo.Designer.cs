@@ -436,7 +436,7 @@ namespace Formularios
             // pb4
             // 
             this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
-            this.pb4.Location = new System.Drawing.Point(655, 486);
+            this.pb4.Location = new System.Drawing.Point(661, 486);
             this.pb4.Name = "pb4";
             this.pb4.Size = new System.Drawing.Size(106, 65);
             this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -32,6 +32,8 @@ namespace Formularios
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListarPlantaConFruto));
             this.label7 = new System.Windows.Forms.Label();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.lblCargando = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.lblEvento = new System.Windows.Forms.Label();
             this.pb5 = new System.Windows.Forms.PictureBox();
             this.pb4 = new System.Windows.Forms.PictureBox();
@@ -76,8 +78,6 @@ namespace Formularios
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.lblCargando = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
@@ -149,6 +149,26 @@ namespace Formularios
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(986, 590);
             this.pnlPrincipal.TabIndex = 39;
+            // 
+            // lblCargando
+            // 
+            this.lblCargando.AutoSize = true;
+            this.lblCargando.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCargando.Location = new System.Drawing.Point(499, 61);
+            this.lblCargando.Name = "lblCargando";
+            this.lblCargando.Size = new System.Drawing.Size(0, 25);
+            this.lblCargando.TabIndex = 78;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(303, 57);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(107, 30);
+            this.btnActualizar.TabIndex = 77;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // lblEvento
             // 
@@ -585,26 +605,6 @@ namespace Formularios
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Location = new System.Drawing.Point(303, 57);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(107, 30);
-            this.btnActualizar.TabIndex = 77;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // lblCargando
-            // 
-            this.lblCargando.AutoSize = true;
-            this.lblCargando.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCargando.Location = new System.Drawing.Point(499, 61);
-            this.lblCargando.Name = "lblCargando";
-            this.lblCargando.Size = new System.Drawing.Size(0, 25);
-            this.lblCargando.TabIndex = 78;
             // 
             // FrmListarPlantaConFruto
             // 
