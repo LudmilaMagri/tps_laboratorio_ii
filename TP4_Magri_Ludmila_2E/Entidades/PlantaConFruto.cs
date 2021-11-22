@@ -8,9 +8,12 @@ using Excepciones;
 
 namespace Entidades
 {
+    public delegate void MiDelegadoConFruto(List<PlantaConFruto> lista);
     [Serializable]
     public class PlantaConFruto : Planta, IAltura
     {
+        public event MiDelegadoConFruto MostrarPlantaConFruto;
+
         public enum EColorFlor
         {
             roja, amarilla, rosa
@@ -32,6 +35,13 @@ namespace Entidades
             this.ColorFlor = colorFlor;
             this.Fruto = fruto;
             this.Id = UltimoId() + 1;
+            this.Altura = altura;
+        }
+        public PlantaConFruto(string nombre, string familia, string origen, int aniosVida, float cantidadAgua, string fruto, float altura)
+           : base(nombre, familia, origen, aniosVida, cantidadAgua)
+        {
+            this.Fruto = fruto;
+           // this.Id = UltimoId() + 1;
             this.Altura = altura;
         }
 
@@ -158,15 +168,21 @@ namespace Entidades
             listaFiltrada = lista.Where(p => p.ColorFlor.ToString() == color).ToList();
             return listaFiltrada;
         }
+
+        /// <summary>
+        /// Calcula el porcentaje del color seleccionado de flor
+        /// </summary>
+        /// <param name="listaFiltradaDeFrutos"></param>
+        /// <param name="listaTotal"></param>
+        /// <param name="florSeleccionada"></param>
+        /// <returns></returns>
         public static float PorcentajeDeFLor(List<PlantaConFruto> listaFiltradaDeFrutos, List<PlantaConFruto> listaTotal, string florSeleccionada)
         {
             List<PlantaConFruto> listaFiltrada = FiltrarColorFlor(listaFiltradaDeFrutos, florSeleccionada);
             float cantidadTotal = listaTotal.Count;
             float porcentaje = 100;
             float porcentajeTotal = 0;
-
             porcentajeTotal = (listaFiltrada.Count * porcentaje) / cantidadTotal;
-                  
             return porcentajeTotal;
         }
 
@@ -257,6 +273,13 @@ namespace Entidades
             
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="datos"></param>
+        /// <param name="nombreArchivo"></param>
+        /// <param name="porcentaje"></param>
+        /// <returns></returns>
         public static bool EscribirTxtPorcentaje(List<PlantaConFruto> datos, string nombreArchivo, float porcentaje)
         {
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -287,6 +310,19 @@ namespace Entidades
                 }
             }
             return true;
+
+        }
+
+        /// <summary>
+        /// Metodo para invocar al delegado si hay mas de 2 plantas en la lista
+        /// </summary>
+        /// <param name="lista"></param>
+        public void ControlarLista(List<PlantaConFruto> lista)
+        {
+            if (CargaDeDatos.listaPlantaConFruto.Count >= 2)
+            {
+                MostrarPlantaConFruto.Invoke(lista);
+            }
 
         }
 

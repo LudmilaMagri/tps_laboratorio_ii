@@ -36,8 +36,9 @@ namespace Formularios
         }
         private void FrmFiltros_Load(object sender, EventArgs e)
         {
-
+            this.ListasNulas();
         }
+
         private void btnOrigen_Click(object sender, EventArgs e)
         {
             if(cmbOrigen.SelectedItem != null)
@@ -53,6 +54,7 @@ namespace Formularios
                 ActualizarDgvConFruto(listaFiltradaConFrutos);
                 ActualizarDgvSinFruto(listaFiltradaSinFruto);
                 ActualizarDgvMusgos(listaFiltradaMusgo);
+                
             }
             else
             {
@@ -79,7 +81,7 @@ namespace Formularios
                     }
                     else
                     {
-                        lblMensaje.Text = "Error";
+                        lblMensaje.Text = "Haga click en 'Filtrar' para generar los resultados";
                     }
                 }
                 else
@@ -104,30 +106,16 @@ namespace Formularios
             }
            
         }
-        
-        private void ActualizarDgvConFruto(List<PlantaConFruto> lista)
-        {
-            dgvMostrarConFruto.DataSource = null;
-            dgvMostrarConFruto.DataSource = lista;
-        }
-        private void ActualizarDgvSinFruto(List<PlantaSinFruto> lista)
-        {
-            dgvSinFruto.DataSource = null;
-            dgvSinFruto.DataSource = lista;
-        }
-        private void ActualizarDgvMusgos(List<PlantaMusgo> lista)
-        {
-            dgvMusgos.DataSource = null;
-            dgvMusgos.DataSource = lista;
-        }
+       
        
 
         private void btnEsporas_Click(object sender, EventArgs e)
         {
             PlantaMusgo musgo = new PlantaMusgo();
             string nombreMusgo;
-            nombreMusgo = PlantaMusgo.FiltrarCantidadEsporas(listaMusgos);
+            nombreMusgo = listaMusgos.FiltrarCantidadEsporas();
             listaFiltradaMusgo = musgo.BuscarPlantaPorNombre(nombreMusgo);
+            lblMensaje.Text = "La planta con mas esporas es : " + nombreMusgo;
             ActualizarDgvMusgos(listaFiltradaMusgo);
         }
         private void btnExportEsporas_Click(object sender, EventArgs e)
@@ -140,6 +128,8 @@ namespace Formularios
                     lblMensaje.Text = "Archivo de 'Filtrado Max Esporas' generado correctamente";
                     this.ListasNulas();
                 }
+                else
+                    lblMensaje.Text = "Haga click en 'Max Esporas' para generar los resultados";
             }
             catch (EscribirTxtExceptionMusgo)
             {
@@ -174,13 +164,14 @@ namespace Formularios
                 {
                     if (listaFiltradaConFrutos != null)
                     {
-                        PlantaConFruto.EscribirTxt(listaFiltradaConFrutos, "Filtrado_ColorFlor_Plantas_ConFrutos");
                         float porcentaje = PlantaConFruto.PorcentajeDeFLor(listaFiltradaConFrutos, listaConFrutos, cmbFlor.Text);
 
                         PlantaConFruto.EscribirTxtPorcentaje(listaFiltradaConFrutos, "Filtrado_ColorFlor_Plantas_ConFrutos", porcentaje);
                         lblMensaje.Text = "Archivo de 'Filtrado ColorFlor' generado correctamente";
                         this.ListasNulas();
                     }
+                    else
+                        lblMensaje.Text = "Haga click en 'Filtrar' para generar los resultados";
                 }
                 else
                 {
@@ -218,11 +209,14 @@ namespace Formularios
                 {
                     if (listaFiltradaConFrutos != null)
                     {
-                        PlantaConFruto.EscribirTxt(listaFiltradaConFrutos, "Filtrado_TipoFruto_Plantas_ConFrutos");
+                        float porcentaje = PlantaConFruto.PorcentajeDeFrutos(listaFiltradaConFrutos, listaConFrutos, cmbFruto.Text);
+                        PlantaConFruto.EscribirTxtPorcentaje(listaFiltradaConFrutos, "Filtrado_TipoFruto_Plantas_ConFrutos", porcentaje);
                         lblMensaje.Text = "Archivo de 'Filtrado TipoFruto' generado correctamente";
 
                         this.ListasNulas();
                     }
+                    else
+                        lblMensaje.Text = "Haga click en 'Filtrar' para generar los resultados";
                 }
                 else
                 {
@@ -249,12 +243,14 @@ namespace Formularios
                     case "Con Fruto":
                         nombreConFruto = conFruto.AlturaMaxima();
                         listaFiltradaConFrutos = conFruto.BuscarPlantaPorNombre(nombreConFruto);
+                        lblMensaje.Text = "La planta mas alta es: " + nombreConFruto; 
                         ActualizarDgvConFruto(listaFiltradaConFrutos);
                         break;
 
                     default:
                         nombreSinFruto = sinFruto.AlturaMaxima();
                         listaFiltradaSinFruto = sinFruto.BuscarPlantaPorNombre(nombreSinFruto);
+                        lblMensaje.Text = "La planta mas alta es: " + nombreSinFruto;
                         ActualizarDgvSinFruto(listaFiltradaSinFruto);
                         break;
                 }
@@ -277,12 +273,17 @@ namespace Formularios
                         lblMensaje.Text = "Archivo de 'Filtrado AlturaMax' generado correctamente";
                         this.ListasNulas();
                     }
+                    else
+                        lblMensaje.Text = "Haga click en 'Filtrar' para generar los resultados";
+
                     if (listaFiltradaSinFruto != null)
                     {
                         PlantaSinFruto.EscribirTxt(listaFiltradaSinFruto, "Filtrado_AlturaMax_Plantas_SinFrutos");
                         lblMensaje.Text = "Archivo de 'Filtrado AlturaMax' generado correctamente";
                         this.ListasNulas();
                     }
+                    else
+                        lblMensaje.Text = "Haga click en 'Filtrar' para generar los resultados";
                 }
                 else
                 {
@@ -299,16 +300,6 @@ namespace Formularios
                 EscribirTxtExceptionSinFruto ex = new EscribirTxtExceptionSinFruto();
                 lblMensaje.Text = ex.Message.ToString();
             }
-        }
-        private void ListasNulas()
-        {
-            listaFiltradaConFrutos = null;
-            listaFiltradaMusgo = null;
-            listaFiltradaSinFruto = null;
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnPorcentajeTipoPlanta_Click(object sender, EventArgs e)
@@ -327,23 +318,23 @@ namespace Formularios
             {
                 if (cmbTipoPlanta != null)
                 {
-                    resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
-                    switch (cmbTipoPlanta.SelectedItem)
-                    {
-                        case "Con Fruto":
-                            PlantaConFruto.EscribirTxtPorcentaje(listaConFrutos, "Porcentaje_PlantaConFruto", resultado);
-                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaConFruto' generado correctamente";
-                            break;
+                        resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
+                        switch (cmbTipoPlanta.SelectedItem)
+                        {
+                            case "Con Fruto":
+                                PlantaConFruto.EscribirTxtPorcentaje(listaConFrutos, "Porcentaje_PlantaConFruto", resultado);
+                                lblMensaje.Text = "Archivo de 'Porcentaje_PlantaConFruto' generado correctamente";
+                                break;
 
-                        case "Sin Fruto":
-                            PlantaSinFruto.EscribirTxtPorcentaje(listaSinFrutos, "Porcentaje_PlantaSinFruto", resultado);
-                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaSinFruto' generado correctamente";
-                            break;
-                        case "Musgo":
-                            PlantaMusgo.EscribirTxTPorcentaje(listaMusgos, "Porcentaje_PlantaMusgo", resultado);
-                            lblMensaje.Text = "Archivo de 'Porcentaje_PlantaMusgo' generado correctamente";
-                            break;
-                    }
+                            case "Sin Fruto":
+                                PlantaSinFruto.EscribirTxtPorcentaje(listaSinFrutos, "Porcentaje_PlantaSinFruto", resultado);
+                                lblMensaje.Text = "Archivo de 'Porcentaje_PlantaSinFruto' generado correctamente";
+                                break;
+                            case "Musgo":
+                                PlantaMusgo.EscribirTxTPorcentaje(listaMusgos, "Porcentaje_PlantaMusgo", resultado);
+                                lblMensaje.Text = "Archivo de 'Porcentaje_PlantaMusgo' generado correctamente";
+                                break;
+                        }
                 }
                 else
                 {
@@ -367,5 +358,55 @@ namespace Formularios
             }
 
         }
+
+        /// <summary>
+        /// Limpia la pantalla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            dgvMostrarConFruto.DataSource = null;
+            dgvSinFruto.DataSource = null;
+            dgvMusgos.DataSource = null;
+            dgvMostrarConFruto.DataSource = listaConFrutos;
+            dgvSinFruto.DataSource = listaSinFrutos;
+            dgvMusgos.DataSource = listaMusgos;
+            lblMensaje.Text = " ";
+        }
+
+        /// <summary>
+        /// Actualiza el datagridview
+        /// </summary>
+        /// <param name="lista"></param>
+        private void ActualizarDgvConFruto(List<PlantaConFruto> lista)
+        {
+            dgvMostrarConFruto.DataSource = null;
+            dgvMostrarConFruto.DataSource = lista;
+        }
+        private void ActualizarDgvSinFruto(List<PlantaSinFruto> lista)
+        {
+            dgvSinFruto.DataSource = null;
+            dgvSinFruto.DataSource = lista;
+        }
+        private void ActualizarDgvMusgos(List<PlantaMusgo> lista)
+        {
+            dgvMusgos.DataSource = null;
+            dgvMusgos.DataSource = lista;
+        }
+        /// <summary>
+        /// Pone nulas las listas de filtrado para seguir utilizando
+        /// </summary>
+        private void ListasNulas()
+        {
+            listaFiltradaConFrutos = null;
+            listaFiltradaMusgo = null;
+            listaFiltradaSinFruto = null;
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

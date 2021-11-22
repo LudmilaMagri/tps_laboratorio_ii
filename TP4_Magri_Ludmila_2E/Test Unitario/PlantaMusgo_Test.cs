@@ -15,7 +15,7 @@ namespace Test_Unitario
 
             lista.Add(plantaMusgo);
 
-            plantaMusgo.Nombre = PlantaMusgo.FiltrarCantidadEsporas(lista);
+            plantaMusgo.Nombre = Extension.FiltrarCantidadEsporas(lista) ;
 
             Assert.IsNotNull(plantaMusgo.Nombre);
             Assert.IsTrue(plantaMusgo.Nombre.ToString() != string.Empty);

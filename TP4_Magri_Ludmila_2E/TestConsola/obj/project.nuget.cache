@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8wRixUQC0lc5VaCBhd70ju5o0KYUH9ng5tKBmx5pNVWWgNHrjazTdzx6QDkJ3vPqe1jRsWbJMOQkIWSbDjMWPw==",
+  "dgSpecHash": "x0+bx7vorKf10/NTczkVQk/FWK23YVxjToE8kQ+pscnShYtFehTSGe3Y52IeIjl7wwqLaEG6YNciaMgGiBFiRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\TestConsola\\TestConsola.csproj",
+  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP4_Magri_Ludmila_2E\\TestConsola\\TestConsola.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ludmi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\ludmi\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

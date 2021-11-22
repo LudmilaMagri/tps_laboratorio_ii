@@ -8,9 +8,13 @@ using Excepciones;
 
 namespace Entidades
 {
+    public delegate void MiDelegadoSinFruto(List<PlantaSinFruto> lista);
+
     [Serializable]
     public class PlantaSinFruto : Planta, IAltura
     {
+        public event MiDelegadoSinFruto MostrarPlantaSinFruto;
+
         public enum ETipoPlanta
         {
             Arbol, Arbusto
@@ -19,16 +23,23 @@ namespace Entidades
         private ETipoPlanta tipoPlanta;
         private int idPlantaSinFruto;
         private float altura;
+
         public PlantaSinFruto()
         {
 
         }
+        
         public PlantaSinFruto(string nombre, string familia, string origen, int aniosVida, float cantidadAgua, ETipoPlanta tipoPlanta, float altura)
            : base(nombre, familia, origen, aniosVida, cantidadAgua)
         {
             this.Id = UltimoId() + 1;
             this.TipoPlanta = tipoPlanta;
             this.Altura = altura; 
+        }
+        public PlantaSinFruto(string nombre, string familia, string origen, int aniosVida, float cantidadAgua, float altura)
+            : base(nombre, familia, origen, aniosVida, cantidadAgua)
+        {
+            this.Altura = altura;
         }
 
         #region Propiedades
@@ -165,6 +176,13 @@ namespace Entidades
             }
             return true;
         }
+        /// <summary>
+        /// Escribe en .txt los datos pasados por parametro y le agrega el porcentaje calculado
+        /// </summary>
+        /// <param name="datos"></param>
+        /// <param name="nombreArchivo"></param>
+        /// <param name="porcentaje"></param>
+        /// <returns></returns>
         public static bool EscribirTxtPorcentaje(List<PlantaSinFruto> datos, string nombreArchivo, float porcentaje)
         {
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -197,6 +215,7 @@ namespace Entidades
             }
             return true;
         }
+
         /// <summary>
         /// Busca el ultimo id de la lista planta sin fruto
         /// </summary>
@@ -210,6 +229,22 @@ namespace Entidades
             }
             return numeroRetorno;
         }
+
+        /// <summary>
+        /// Metodo para invocar al delegado si hay mas de 2 plantas en la lista
+        /// </summary>
+        /// <param name="lista"></param>
+        public void ControlarLista(List<PlantaSinFruto> lista)
+        {
+            if (CargaDeDatos.listaPlantaSinFruto.Count >= 2)
+            {
+                MostrarPlantaSinFruto.Invoke(lista);
+            }
+            
+        }
+
+
+       
 
         public override string ToString()
         {

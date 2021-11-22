@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -21,11 +22,15 @@ namespace Formularios
             InitializeComponent();
             listaMusgo = CargaDeDatos.RetornarListaMusgo();
             plantaMusgo = new PlantaMusgo();
+            plantaMusgo.MostrarPlantaMusgo += MostrarColoresLista;
+            plantaMusgo.MostrarPlantaMusgo += MostrarLista;
+            plantaMusgo.MostrarPlantaMusgo += MostrarImagen;
+            plantaMusgo.ControlarLista(listaMusgo);
         }
 
         private void FrmListarPlantaMusgo_Load(object sender, EventArgs e)
         {
-            dgvMusgo.DataSource = listaMusgo;
+            CustomUI();
         }
         public void ActualizarDgv()
         {
@@ -42,9 +47,12 @@ namespace Formularios
 
             try
             {
-                plantaMusgo.AltaMusgo(new PlantaMusgo(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, cantEsporas));
+                PlantaMusgo planta = new PlantaMusgo(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, cantEsporas);
+                plantaMusgo.AltaMusgo(planta);
+               Conexion_DB.AgregarPlantaMusgo(planta);
                 lblMensaje.Text = "Planta agregada";
                 ActualizarDgv();
+                plantaMusgo.ControlarLista(listaMusgo);
             }
             catch (NombreException)
             {
@@ -80,7 +88,6 @@ namespace Formularios
 
         }
 
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dgvMusgo.SelectedRows.Count > 0)
@@ -115,10 +122,12 @@ namespace Formularios
                             item.AniosVida = int.Parse(txtCicloVida.Text);
                             item.CantidadAgua = float.Parse(txtCantidadAgua.Text);
                             item.CantidadEsporas = int.Parse(txtCantEsporas.Text);
+                            Conexion_DB.GuardarPlantaMusgo(item, item.Id);
                             lblMensaje.Text = "Modificacion Exitosa";
                         }
                     }
                     ActualizarDgv();
+                    plantaMusgo.ControlarLista(listaMusgo);
                 }
                 else
                     MessageBox.Show("Ingrese los datos");
@@ -164,8 +173,10 @@ namespace Formularios
                 {
                     int.TryParse(txtIdPlanta.Text, out int idAux);
                     plantaMusgo.EliminarPlanta(idAux);
+                    Conexion_DB.EliminarPlantaMusgo(idAux);
                     lblMensaje.Text = "Planta eliminada exitosamente";
                     ActualizarDgv();
+                    plantaMusgo.ControlarLista(listaMusgo);
                 }
             }
             else
@@ -243,6 +254,189 @@ namespace Formularios
             {
                 EscribirXmlException ex = new EscribirXmlException();
                 lblMensaje.Text = ex.Message.ToString();
+            }
+        }
+
+        #region Manejadores
+
+        /// <summary>
+        /// Muestra la cantidad de plantas que tiene la lista 
+        /// </summary>
+        /// <param name="lista">lista de plantas</param>
+        private void MostrarLista(List<PlantaMusgo> lista)
+        {
+            this.Refresh();
+            lblEvento.Text = "Cantidad de plantas: " + lista.Count.ToString();
+        }
+        /// <summary>
+        /// Colorea el texto segun la cantidad de plantas
+        /// </summary>
+        /// <param name="lista"></param>
+        private void MostrarColoresLista(List<PlantaMusgo> lista)
+        {
+            if (lista.Count <= 3)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.DarkRed;
+            }
+            else if (lista.Count >= 3 && lista.Count <= 5)
+            {
+
+                this.Refresh();
+                lblEvento.BackColor = Color.Coral;
+            }
+            else if (lista.Count > 5 && lista.Count <= 7)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.Orange;
+            }
+            else if (lista.Count > 7 && lista.Count <= 9)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.YellowGreen;
+            }
+            else
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.ForestGreen;
+            }
+        }
+
+        /// <summary>
+        /// Coloca una imagen de acuerdo a la cantidad de plantas en la lista
+        /// </summary>
+        /// <param name="lista"></param>
+        private void MostrarImagen(List<PlantaMusgo> lista)
+        {
+            if (lista.Count <= 3)
+            {
+                pb1.Show();
+                pb2.Hide();
+                pb3.Hide();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count >= 3 && lista.Count <= 5)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Hide();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count > 5 && lista.Count <= 7)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count > 7 && lista.Count <= 9)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Show();
+                pb5.Hide();
+            }
+            else
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Show();
+                pb5.Show();
+            }
+
+        }
+
+        #endregion
+
+
+        /// <summary>
+        /// Customiza el UI
+        /// </summary>
+        private void CustomUI()
+        {
+            btnAlta.Enabled = false;
+            btnEditar.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardarCambios.Enabled = false;
+            btnGuardarXml.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnAlta.BackColor = Color.Gray;
+            btnEditar.BackColor = Color.Gray;
+            btnGuardar.BackColor = Color.Gray;
+            btnEliminar.BackColor = Color.Gray;
+            btnGuardarCambios.BackColor = Color.Gray;
+            btnGuardarXml.BackColor = Color.Gray;
+            btnLimpiar.BackColor = Color.Gray;
+            btnActualizar.BackColor = Color.Coral;
+            pb1.Hide();
+            pb2.Hide();
+            pb3.Hide();
+            pb4.Hide();
+            pb5.Hide();
+            lblEvento.Hide();
+        }
+
+
+
+
+        /// <summary>
+        /// Boton que dispara la tarea de actualizar el datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            lblCargando.Text = "Cargando lista de Plantas";
+
+            Task.Run(() => ActualizarDatagrid());
+        }
+
+        /// <summary>
+        /// Tarea encargada de traer la lista de plantas de la base de datos y actualizar el datagridview
+        /// </summary>
+        private void ActualizarDatagrid()
+        {
+            List<PlantaMusgo> listaAux;
+            listaAux = Conexion_DB.TraerPlantaMusgo();
+            Thread.Sleep(1500);
+
+            if (this.dgvMusgo.InvokeRequired)
+            {
+                this.dgvMusgo.BeginInvoke((MethodInvoker)delegate ()
+                {
+                    dgvMusgo.DataSource = null;
+                    dgvMusgo.DataSource = listaAux;
+                    btnAlta.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnGuardar.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    btnGuardarCambios.Enabled = true;
+                    btnGuardarXml.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    btnAlta.BackColor = Color.FromArgb(181, 205, 163);
+                    btnEditar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnEliminar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardarCambios.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardarXml.BackColor = Color.FromArgb(181, 205, 163);
+                    btnActualizar.BackColor = Color.LightGray;
+                    btnLimpiar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnActualizar.Enabled = false;
+                    lblEvento.Show();
+                    plantaMusgo.ControlarLista(listaMusgo);
+                    lblCargando.Text = " ";
+                });
+            }
+            else
+            {
+                dgvMusgo.DataSource = null;
+                dgvMusgo.DataSource = CargaDeDatos.RetornarListaSinFruto();
             }
         }
     }

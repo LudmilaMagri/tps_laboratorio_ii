@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
@@ -22,13 +23,95 @@ namespace Formularios
             InitializeComponent();
             listaSinFruto = CargaDeDatos.RetornarListaSinFruto();
             plantaSinFruto = new PlantaSinFruto();
-           
+            plantaSinFruto.MostrarPlantaSinFruto += MostrarColoresLista;
+            plantaSinFruto.MostrarPlantaSinFruto += MostrarLista;
+            plantaSinFruto.MostrarPlantaSinFruto += MostrarImagen;
+            plantaSinFruto.ControlarLista(listaSinFruto);
         }
+
+ 
         private void FrmListarPlantaSinFruto_Load(object sender, EventArgs e)
         {
             cmbTipoPlanta.DataSource = Enum.GetValues(typeof(PlantaSinFruto.ETipoPlanta));
-            dgvListarSinFruto.DataSource = listaSinFruto;
+            CustomUI();
+
         }
+
+        private void CustomUI()
+        {
+            btnAlta.Enabled = false;
+            btnEditar.Enabled = false;
+            btnGuardarEdit.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardarCambios.Enabled = false;
+            btnGuardarXml.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnAlta.BackColor = Color.Gray;
+            btnEditar.BackColor = Color.Gray;
+            btnGuardarEdit.BackColor = Color.Gray;
+            btnEliminar.BackColor = Color.Gray;
+            btnGuardarCambios.BackColor = Color.Gray;
+            btnGuardarXml.BackColor = Color.Gray;
+            btnLimpiar.BackColor = Color.Gray;
+            btnActualizar.BackColor = Color.Coral;
+            pb1.Hide();
+            pb2.Hide();
+            pb3.Hide();
+            pb4.Hide();
+            pb5.Hide();
+            lblEvento.Hide();
+        }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            lblCargando.Text = "Cargando lista de Plantas";
+            
+            Task.Run(() => ActualizarDatagrid());
+           
+        }
+
+        private void ActualizarDatagrid()
+        {
+            List<PlantaSinFruto> listaAux;
+            listaAux = Conexion_DB.TraerPlantaSinFruto();
+            Thread.Sleep(1500);
+
+            if (this.dgvListarSinFruto.InvokeRequired)
+            {
+                this.dgvListarSinFruto.BeginInvoke((MethodInvoker)delegate ()
+                {
+                    dgvListarSinFruto.DataSource = null;
+                    dgvListarSinFruto.DataSource = listaAux;
+                    btnAlta.Enabled = true;
+                    btnEditar.Enabled = true;
+                    btnGuardarEdit.Enabled = true;
+                    btnEliminar.Enabled = true;
+                    btnGuardarCambios.Enabled = true;
+                    btnGuardarXml.Enabled = true;
+                    btnLimpiar.Enabled = true;
+                    btnAlta.BackColor = Color.FromArgb(181, 205, 163);
+                    btnEditar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardarEdit.BackColor = Color.FromArgb(181, 205, 163);
+                    btnEliminar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardarCambios.BackColor = Color.FromArgb(181, 205, 163);
+                    btnGuardarXml.BackColor = Color.FromArgb(181, 205, 163);
+                    btnActualizar.BackColor = Color.LightGray;
+                    btnLimpiar.BackColor = Color.FromArgb(181, 205, 163);
+                    btnActualizar.Enabled = false;
+                    lblEvento.Show();
+                    plantaSinFruto.ControlarLista(listaSinFruto);
+                    lblCargando.Text = " ";
+                });
+            }
+            else
+            {
+                dgvListarSinFruto.DataSource = null;
+                dgvListarSinFruto.DataSource = CargaDeDatos.RetornarListaSinFruto();
+            }
+
+        }
+
+       
+
         public void ActualizarDgv()
         {
             dgvListarSinFruto.DataSource = null;
@@ -43,18 +126,25 @@ namespace Formularios
             float.TryParse(txtCantAgua.Text, out float cantAguaParse);
             float.TryParse(txtAltura.Text, out float alturaParse);
             string mensaje = txtNombre.Text;
+            PlantaSinFruto planta = new PlantaSinFruto();
             try
             {
                 switch (cmbTipoPlanta.SelectedItem)
                 {
                     case PlantaSinFruto.ETipoPlanta.Arbol:
-                        PlantaSinFruto.AltaSinFruto(new PlantaSinFruto(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, PlantaSinFruto.ETipoPlanta.Arbol, alturaParse));
+                        planta = new PlantaSinFruto(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, PlantaSinFruto.ETipoPlanta.Arbol, alturaParse);
+                        PlantaSinFruto.AltaSinFruto(planta);
+                        Conexion_DB.AgregarPlantaSinFruto(planta);
                         break;
                     case PlantaSinFruto.ETipoPlanta.Arbusto:
-                        PlantaSinFruto.AltaSinFruto(new PlantaSinFruto(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, PlantaSinFruto.ETipoPlanta.Arbusto, alturaParse));
+                        planta = new PlantaSinFruto(txtNombre.Text, txtFamilia.Text, txtOrigen.Text, añosVidaParse, cantAguaParse, PlantaSinFruto.ETipoPlanta.Arbusto, alturaParse);
+                        PlantaSinFruto.AltaSinFruto(planta);
+                        Conexion_DB.AgregarPlantaSinFruto(planta);
                         break;
                 }
+                lblMensaje.Text = "Planta agregada exitosamente";
                 ActualizarDgv();
+                plantaSinFruto.ControlarLista(listaSinFruto);
             }
             catch (NombreException)
             {
@@ -116,7 +206,6 @@ namespace Formularios
 
             try
             {
-
                 if (!(txtIdPlanta.Text == ""))
                 {
                     foreach (PlantaSinFruto item in listaSinFruto)
@@ -129,9 +218,12 @@ namespace Formularios
                             item.AniosVida = int.Parse(txtCicloVida.Text);
                             item.CantidadAgua = float.Parse(txtCantAgua.Text);
                             item.Altura = float.Parse(txtAltura.Text);
+                            Conexion_DB.GuardarPlantaSinFruto(item, item.Id);
                             lblMensaje.Text = "Modificacion Exitosa";
                         }
                     }
+                    ActualizarDgv();
+                    plantaSinFruto.ControlarLista(listaSinFruto);
                 }
                 else
                     MessageBox.Show("Ingrese los datos");
@@ -166,7 +258,6 @@ namespace Formularios
       
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             if (dgvListarSinFruto.SelectedRows.Count > 0)
             {
                 txtIdPlanta.Text = dgvListarSinFruto.CurrentRow.Cells[1].Value.ToString();
@@ -174,8 +265,10 @@ namespace Formularios
                 {
                     int.TryParse(txtIdPlanta.Text, out int idAux);
                     plantaSinFruto.EliminarPlanta(idAux);
+                    Conexion_DB.EliminarPlantaSinFruto(idAux);
                     lblMensaje.Text = "Planta eliminada exitosamente";
                     ActualizarDgv();
+                    plantaSinFruto.ControlarLista(listaSinFruto);
                 }
             }
             else
@@ -218,6 +311,104 @@ namespace Formularios
             }
         }
 
+
+        #region Manejadores
+
+        /// <summary>
+        /// Muestra la cantidad de plantas que tiene la lista 
+        /// </summary>
+        /// <param name="lista">lista de plantas</param>
+        private void MostrarLista(List<PlantaSinFruto> lista)
+        {
+            this.Refresh();
+            lblEvento.Text = "Cantidad de plantas: " + lista.Count.ToString();
+        }
+        /// <summary>
+        /// Colorea el texto segun la cantidad de plantas
+        /// </summary>
+        /// <param name="lista"></param>
+        private void MostrarColoresLista(List<PlantaSinFruto> lista)
+        {
+            if (lista.Count <= 3)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.DarkRed;
+            }
+            else if (lista.Count >= 3 && lista.Count <= 5)
+            {
+
+                this.Refresh();
+                lblEvento.BackColor = Color.Coral;
+            }
+            else if (lista.Count > 5 && lista.Count <= 7)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.Orange;
+            }
+            else if (lista.Count > 7 && lista.Count <= 9)
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.YellowGreen;
+            }
+            else
+            {
+                this.Refresh();
+                lblEvento.BackColor = Color.ForestGreen;
+            }
+        }
+        /// <summary>
+        /// Coloca una imagen de acuerdo a la cantidad de plantas en la lista
+        /// </summary>
+        /// <param name="lista"></param>
+        private void MostrarImagen(List<PlantaSinFruto> lista)
+        {
+            if (lista.Count <= 3)
+            {
+                pb1.Show();
+                pb2.Hide();
+                pb3.Hide();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count >= 3 && lista.Count <= 5)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Hide();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count > 5 && lista.Count <= 7)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Hide();
+                pb5.Hide();
+            }
+            else if (lista.Count > 7 && lista.Count <= 9)
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Show();
+                pb5.Hide();
+            }
+            else
+            {
+                pb1.Show();
+                pb2.Show();
+                pb3.Show();
+                pb4.Show();
+                pb5.Show();
+            }
+
+        }
+        #endregion
+       
+
+
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             this.Limpiar();
@@ -242,5 +433,7 @@ namespace Formularios
             lblCatchOrigen.Text = " ";
             lblCatchVida.Text = " ";
         }
+
+       
     }
 }

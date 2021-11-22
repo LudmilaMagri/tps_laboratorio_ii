@@ -30,6 +30,14 @@ namespace Entidades
             return listaFiltrada;
         }
 
+        /// <summary>
+        /// Calcula el porcentaje de plantas por el origen elegido
+        /// </summary>
+        /// <param name="listPlantaConFrutos"></param>
+        /// <param name="listPlantaSinFrutos"></param>
+        /// <param name="listPlantaMusgos"></param>
+        /// <param name="seleccion"></param>
+        /// <returns></returns>
         public static float PorcentajeOrigen(List<PlantaConFruto> listPlantaConFrutos, List<PlantaSinFruto> listPlantaSinFrutos, List<PlantaMusgo> listPlantaMusgos, string seleccion)
         {
             float porcentaje = 100;
@@ -48,6 +56,14 @@ namespace Entidades
             return porcentajeTotal;
         }
 
+        /// <summary>
+        /// Calcula el porcentaje por el tipo de planta 
+        /// </summary>
+        /// <param name="listPlantaConFrutos"></param>
+        /// <param name="listPlantaSinFrutos"></param>
+        /// <param name="listPlantaMusgos"></param>
+        /// <param name="seleccion"></param>
+        /// <returns></returns>
         public static float PorcentajeDeTipoPlanta(List<PlantaConFruto> listPlantaConFrutos, List<PlantaSinFruto> listPlantaSinFrutos, List<PlantaMusgo>  listPlantaMusgos, string seleccion)
         {
             float porcentaje = 100;

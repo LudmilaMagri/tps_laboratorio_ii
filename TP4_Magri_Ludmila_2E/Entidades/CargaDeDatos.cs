@@ -17,12 +17,15 @@ namespace Entidades
       
         static CargaDeDatos()
         {
-            listaPlantaConFruto = new List<PlantaConFruto>();
-            listaPlantaSinFruto = new List<PlantaSinFruto>();
-            listaPlantaMusgo = new List<PlantaMusgo>();
-            ArchivoACheckearConFruto("Planta_Con_Fruto");
-            ArchivoACheckearMusgo("Planta_Musgo");
-            ArchivoACheckearSinFruto("Planta_Sin_Fruto");
+            Archivos<string>.ArchivoACheckearConnection("SqlConnection");
+            listaPlantaConFruto = Conexion_DB.TraerPlantaConFruto();
+            listaPlantaSinFruto = Conexion_DB.TraerPlantaSinFruto();
+            listaPlantaMusgo =  Conexion_DB.TraerPlantaMusgo();
+
+            //Metodos utilizados para el TP3. Ahora la carga de datos se realiza por base de datos.
+            //ArchivoACheckearConFruto("Planta_Con_Fruto");
+            //ArchivoACheckearMusgo("Planta_Musgo");
+            //ArchivoACheckearSinFruto("Planta_Sin_Fruto");
         }
 
         /// <summary>
@@ -154,5 +157,7 @@ namespace Entidades
                 listaPlantaMusgo = Archivos<PlantaMusgo>.LeerXml("Planta_Musgo");
             }
         }
+
+       
     }
 }

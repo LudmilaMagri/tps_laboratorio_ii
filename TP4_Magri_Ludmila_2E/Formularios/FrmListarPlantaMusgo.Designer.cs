@@ -63,9 +63,22 @@ namespace Formularios
             this.lblCatchEsporas = new System.Windows.Forms.Label();
             this.btnGuardarXml = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
+            this.lblEvento = new System.Windows.Forms.Label();
+            this.pb5 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblCargando = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusgo)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +101,7 @@ namespace Formularios
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(359, 432);
+            this.lblMensaje.Location = new System.Drawing.Point(37, 539);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(0, 15);
             this.lblMensaje.TabIndex = 51;
@@ -100,9 +113,9 @@ namespace Formularios
             this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEditar.Location = new System.Drawing.Point(469, 406);
+            this.btnEditar.Location = new System.Drawing.Point(503, 332);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(208, 29);
+            this.btnEditar.Size = new System.Drawing.Size(288, 29);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -126,11 +139,11 @@ namespace Formularios
             // dgvMusgo
             // 
             this.dgvMusgo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMusgo.Location = new System.Drawing.Point(359, 53);
+            this.dgvMusgo.Location = new System.Drawing.Point(296, 87);
             this.dgvMusgo.Name = "dgvMusgo";
             this.dgvMusgo.ReadOnly = true;
             this.dgvMusgo.RowTemplate.Height = 25;
-            this.dgvMusgo.Size = new System.Drawing.Size(447, 339);
+            this.dgvMusgo.Size = new System.Drawing.Size(678, 239);
             this.dgvMusgo.TabIndex = 14;
             // 
             // label9
@@ -253,7 +266,7 @@ namespace Formularios
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 44);
+            this.panel1.Size = new System.Drawing.Size(986, 44);
             this.panel1.TabIndex = 30;
             // 
             // label3
@@ -279,7 +292,7 @@ namespace Formularios
             // btnClose
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(783, 12);
+            this.btnClose.Location = new System.Drawing.Point(951, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(23, 26);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -378,9 +391,9 @@ namespace Formularios
             this.btnGuardarXml.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardarXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarXml.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardarXml.Location = new System.Drawing.Point(601, 474);
+            this.btnGuardarXml.Location = new System.Drawing.Point(696, 389);
             this.btnGuardarXml.Name = "btnGuardarXml";
-            this.btnGuardarXml.Size = new System.Drawing.Size(98, 41);
+            this.btnGuardarXml.Size = new System.Drawing.Size(149, 43);
             this.btnGuardarXml.TabIndex = 13;
             this.btnGuardarXml.Text = "Guardar Cambios XML";
             this.btnGuardarXml.UseVisualStyleBackColor = false;
@@ -393,20 +406,107 @@ namespace Formularios
             this.btnGuardarCambios.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCambios.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(447, 474);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(425, 390);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(98, 41);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(149, 42);
             this.btnGuardarCambios.TabIndex = 12;
             this.btnGuardarCambios.Text = "Guardar Cambios Json";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click_1);
             // 
+            // lblEvento
+            // 
+            this.lblEvento.AutoSize = true;
+            this.lblEvento.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEvento.Location = new System.Drawing.Point(492, 443);
+            this.lblEvento.Name = "lblEvento";
+            this.lblEvento.Size = new System.Drawing.Size(0, 21);
+            this.lblEvento.TabIndex = 63;
+            // 
+            // pb5
+            // 
+            this.pb5.Image = ((System.Drawing.Image)(resources.GetObject("pb5.Image")));
+            this.pb5.Location = new System.Drawing.Point(747, 472);
+            this.pb5.Name = "pb5";
+            this.pb5.Size = new System.Drawing.Size(148, 92);
+            this.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb5.TabIndex = 75;
+            this.pb5.TabStop = false;
+            // 
+            // pb4
+            // 
+            this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
+            this.pb4.Location = new System.Drawing.Point(655, 486);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(106, 65);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb4.TabIndex = 74;
+            this.pb4.TabStop = false;
+            // 
+            // pb3
+            // 
+            this.pb3.Image = ((System.Drawing.Image)(resources.GetObject("pb3.Image")));
+            this.pb3.Location = new System.Drawing.Point(568, 486);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(106, 65);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb3.TabIndex = 73;
+            this.pb3.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.Image = ((System.Drawing.Image)(resources.GetObject("pb2.Image")));
+            this.pb2.Location = new System.Drawing.Point(485, 491);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(106, 65);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb2.TabIndex = 72;
+            this.pb2.TabStop = false;
+            // 
+            // pb1
+            // 
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
+            this.pb1.Location = new System.Drawing.Point(406, 499);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(106, 65);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb1.TabIndex = 71;
+            this.pb1.TabStop = false;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(296, 56);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(107, 30);
+            this.btnActualizar.TabIndex = 78;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblCargando
+            // 
+            this.lblCargando.AutoSize = true;
+            this.lblCargando.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCargando.Location = new System.Drawing.Point(503, 56);
+            this.lblCargando.Name = "lblCargando";
+            this.lblCargando.Size = new System.Drawing.Size(0, 25);
+            this.lblCargando.TabIndex = 79;
+            // 
             // FrmListarPlantaMusgo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(837, 527);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(986, 590);
+            this.Controls.Add(this.lblCargando);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.pb5);
+            this.Controls.Add(this.pb4);
+            this.Controls.Add(this.pb3);
+            this.Controls.Add(this.pb2);
+            this.Controls.Add(this.pb1);
+            this.Controls.Add(this.lblEvento);
             this.Controls.Add(this.btnGuardarXml);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.lblCatchEsporas);
@@ -438,14 +538,20 @@ namespace Formularios
             this.Controls.Add(this.btnAlta);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListarPlantaMusgo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmListarPlantaMusgo";
+            this.Text = "Musgos";
             this.Load += new System.EventHandler(this.FrmListarPlantaMusgo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMusgo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +592,13 @@ namespace Formularios
         private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEvento;
+        private System.Windows.Forms.PictureBox pb5;
+        private System.Windows.Forms.PictureBox pb4;
+        private System.Windows.Forms.PictureBox pb3;
+        private System.Windows.Forms.PictureBox pb2;
+        private System.Windows.Forms.PictureBox pb1;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lblCargando;
     }
 }

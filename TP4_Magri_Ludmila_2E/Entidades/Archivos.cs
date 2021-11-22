@@ -106,5 +106,56 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Lee el archivo XML que contiene la SqlConnection
+        /// </summary>
+        /// <param name="nombreArchivo"></param>
+        /// <returns></returns>
+        public static string LeerXmlSqlConnection(string nombreArchivo)
+        {
+            try
+            {
+                string archivo;
+                string connection;
+                archivo = ruta + $"{nombreArchivo}" + ".xml";
+                if (!Directory.Exists(ruta))
+                {
+                    Directory.CreateDirectory(ruta);
+                }
+                using (XmlTextReader leer = new XmlTextReader(archivo))
+                {
+                    XmlSerializer xmlSer = new XmlSerializer(typeof(string));
+                    connection = (string)xmlSer.Deserialize(leer);
+                }
+                return connection;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Comprueba si el nombre del archivo pasado por parametro existe. 
+        /// Si no existe, crea uno nuevo con la conexión hardcodeada.
+        /// Si existe, lee la conexión.
+        /// </summary>
+        /// <param name="nombre"></param>
+        public static void ArchivoACheckearConnection(string nombre)
+        {
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string connection = @"Server= PC-LUDMILA\SQLEXPRESS;Database=TP4_MAGRI_LUDMILA;Trusted_Connection=True;";
+            ruta += @"\Archivos\";
+            string nombreArchivo = ruta + $"{nombre}" + ".xml";
+            if (!File.Exists(nombreArchivo))
+            {
+                Archivos<string>.EscribirXml(connection, "SqlConnection");
+            }
+            else
+            {
+                connection = Archivos<string>.LeerXmlSqlConnection("SqlConnection");
+            }
+        }
+
     }
 }

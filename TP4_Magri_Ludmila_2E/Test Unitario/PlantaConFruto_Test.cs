@@ -34,6 +34,16 @@ namespace Test_Unitario
 
         }
 
+        [TestMethod]
+        public void TraerPlantaConFruto_01()
+        {
+
+            List<PlantaConFruto> lista;
+
+            lista = Conexion_DB.TraerPlantaConFruto();
+
+            Assert.IsNotNull(lista);
+        }
 
 
     }

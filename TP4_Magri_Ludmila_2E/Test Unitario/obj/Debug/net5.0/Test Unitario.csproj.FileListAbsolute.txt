@@ -102,3 +102,9 @@ C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unit
 C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\obj\Debug\net5.0\ref\Test Unitario.dll
 C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\obj\Debug\net5.0\Test Unitario.pdb
 C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\obj\Debug\net5.0\Test Unitario.genruntimeconfig.cache
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ludmi\Documents\UTN\2do_cuatrimestre\LAB II\Clases_LAB_II\TP3\Test Unitario\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

@@ -8,20 +8,28 @@ using Excepciones;
 
 namespace Entidades
 {
+    public delegate void MiDelegadoMusgo(List<PlantaMusgo> lista);
     [Serializable]
     public class PlantaMusgo : Planta
     {
+        public event MiDelegadoMusgo MostrarPlantaMusgo;
         private int cantidadEsporas;
         private int idPlantaMusgo;
         public PlantaMusgo()
         {
 
         }
-        public PlantaMusgo(string nombre, string familia, string origen, int añosVida, float cantidadAgua, int cantidadEsporas)
-          : base(nombre, familia, origen, añosVida, cantidadAgua)
+        public PlantaMusgo(string nombre, string familia, string origen, int aniosVida, float cantidadAgua, int cantidadEsporas)
+          : base(nombre, familia, origen, aniosVida, cantidadAgua)
         {
             this.Id = UltimoId() + 1;
             this.CantidadEsporas = cantidadEsporas;
+        }
+
+        public PlantaMusgo(string nombre, string familia, string origen, int aniosVida, float cantidadAgua)
+         : base(nombre, familia, origen, aniosVida, cantidadAgua)
+        {
+            
         }
 
 
@@ -74,27 +82,8 @@ namespace Entidades
                 }
             }
         }
-        /// <summary>
-        /// Filtra la planta con mas cantidad de esporas
-        /// </summary>
-        /// <param name="lista"></param>
-        /// <returns>retorna el nombre de la planta encontrada</returns>
-        public static string FiltrarCantidadEsporas(List<PlantaMusgo> lista)
-        {
-            int esporas = 0;
-            int flag = 0;
-            string nombre = null;
-            foreach (PlantaMusgo item in lista)
-            {
-                if(esporas<= item.CantidadEsporas || flag == 0)
-                {
-                    esporas = item.CantidadEsporas;
-                    nombre = item.Nombre;
-                    flag = 1;
-                }
-            }
-            return nombre;
-        }
+      
+        
         /// <summary>
         /// Busca el nombre pasado por parametro
         /// </summary>
@@ -146,6 +135,13 @@ namespace Entidades
             }
             return true;
         }
+        /// <summary>
+        /// Escribe en .txt los datos pasados por parametro y le agrega el porcentaje calculado
+        /// </summary>
+        /// <param name="datos"></param>
+        /// <param name="nombreArchivo"></param>
+        /// <param name="porcentaje"></param>
+        /// <returns></returns>
         public static bool EscribirTxTPorcentaje(List<PlantaMusgo> datos, string nombreArchivo, float porcentaje)
         {
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -190,6 +186,17 @@ namespace Entidades
                 numeroRetorno = item.Id;
             }
             return numeroRetorno;
+        }
+        /// <summary>
+        /// Metodo para invocar al delegado si hay mas de 2 plantas en la lista
+        /// </summary>
+        /// <param name="lista"></param>
+        public void ControlarLista(List<PlantaMusgo> lista)
+        {
+            if (CargaDeDatos.listaPlantaMusgo.Count >= 2)
+            {
+                MostrarPlantaMusgo.Invoke(lista);
+            }
         }
 
         public override string ToString()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R/EpKwJbxM+uEXcdtwslRSdjeIlSP2p08TC4QzA3U6gvwXJoVY/nQgDxvGW1ls4ZU1EiotrL5BLjaIMWnFe7Zg==",
+  "dgSpecHash": "wrobep4sTwHTGNK6JvLla9GFikj56CoPYhvikCepAHEu2f3Q8J8T+C2MyojhueHspfmH/qNX4XrOXjJfokBAnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\Clases_LAB_II\\TP3\\Test Unitario\\Test Unitario.csproj",
+  "projectFilePath": "C:\\Users\\ludmi\\Documents\\UTN\\2do_cuatrimestre\\LAB II\\tps_laboratorio_ii\\TP4_Magri_Ludmila_2E\\Test Unitario\\Test Unitario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ludmi\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\ludmi\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

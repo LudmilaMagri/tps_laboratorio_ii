@@ -31,6 +31,14 @@ namespace Formularios
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListarPlantaSinFruto));
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.lblCargando = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.pb5 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.lblEvento = new System.Windows.Forms.Label();
             this.btnGuardarXml = new System.Windows.Forms.Button();
             this.lblCatchAltura = new System.Windows.Forms.Label();
             this.lblCatchCantAgua = new System.Windows.Forms.Label();
@@ -67,6 +75,11 @@ namespace Formularios
             this.label9 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarSinFruto)).BeginInit();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -74,7 +87,15 @@ namespace Formularios
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(224)))));
+            this.pnlPrincipal.BackColor = System.Drawing.Color.White;
+            this.pnlPrincipal.Controls.Add(this.lblCargando);
+            this.pnlPrincipal.Controls.Add(this.btnActualizar);
+            this.pnlPrincipal.Controls.Add(this.pb5);
+            this.pnlPrincipal.Controls.Add(this.pb4);
+            this.pnlPrincipal.Controls.Add(this.pb3);
+            this.pnlPrincipal.Controls.Add(this.pb2);
+            this.pnlPrincipal.Controls.Add(this.pb1);
+            this.pnlPrincipal.Controls.Add(this.lblEvento);
             this.pnlPrincipal.Controls.Add(this.btnGuardarXml);
             this.pnlPrincipal.Controls.Add(this.lblCatchAltura);
             this.pnlPrincipal.Controls.Add(this.lblCatchCantAgua);
@@ -110,8 +131,87 @@ namespace Formularios
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(801, 569);
+            this.pnlPrincipal.Size = new System.Drawing.Size(986, 590);
             this.pnlPrincipal.TabIndex = 1;
+            // 
+            // lblCargando
+            // 
+            this.lblCargando.AutoSize = true;
+            this.lblCargando.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCargando.Location = new System.Drawing.Point(590, 57);
+            this.lblCargando.Name = "lblCargando";
+            this.lblCargando.Size = new System.Drawing.Size(0, 25);
+            this.lblCargando.TabIndex = 33;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Location = new System.Drawing.Point(296, 55);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(107, 30);
+            this.btnActualizar.TabIndex = 71;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // pb5
+            // 
+            this.pb5.Image = ((System.Drawing.Image)(resources.GetObject("pb5.Image")));
+            this.pb5.Location = new System.Drawing.Point(760, 495);
+            this.pb5.Name = "pb5";
+            this.pb5.Size = new System.Drawing.Size(148, 92);
+            this.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb5.TabIndex = 70;
+            this.pb5.TabStop = false;
+            // 
+            // pb4
+            // 
+            this.pb4.Image = ((System.Drawing.Image)(resources.GetObject("pb4.Image")));
+            this.pb4.Location = new System.Drawing.Point(668, 509);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(106, 65);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb4.TabIndex = 69;
+            this.pb4.TabStop = false;
+            // 
+            // pb3
+            // 
+            this.pb3.Image = ((System.Drawing.Image)(resources.GetObject("pb3.Image")));
+            this.pb3.Location = new System.Drawing.Point(581, 509);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(106, 65);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb3.TabIndex = 68;
+            this.pb3.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.Image = ((System.Drawing.Image)(resources.GetObject("pb2.Image")));
+            this.pb2.Location = new System.Drawing.Point(498, 514);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(106, 65);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb2.TabIndex = 67;
+            this.pb2.TabStop = false;
+            // 
+            // pb1
+            // 
+            this.pb1.Image = ((System.Drawing.Image)(resources.GetObject("pb1.Image")));
+            this.pb1.Location = new System.Drawing.Point(419, 522);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(106, 65);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb1.TabIndex = 66;
+            this.pb1.TabStop = false;
+            // 
+            // lblEvento
+            // 
+            this.lblEvento.AutoSize = true;
+            this.lblEvento.Font = new System.Drawing.Font("Lucida Handwriting", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEvento.Location = new System.Drawing.Point(419, 469);
+            this.lblEvento.Name = "lblEvento";
+            this.lblEvento.Size = new System.Drawing.Size(0, 21);
+            this.lblEvento.TabIndex = 65;
             // 
             // btnGuardarXml
             // 
@@ -120,9 +220,9 @@ namespace Formularios
             this.btnGuardarXml.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardarXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarXml.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardarXml.Location = new System.Drawing.Point(585, 496);
+            this.btnGuardarXml.Location = new System.Drawing.Point(715, 393);
             this.btnGuardarXml.Name = "btnGuardarXml";
-            this.btnGuardarXml.Size = new System.Drawing.Size(98, 51);
+            this.btnGuardarXml.Size = new System.Drawing.Size(149, 42);
             this.btnGuardarXml.TabIndex = 14;
             this.btnGuardarXml.Text = "Guardar Cambios XML";
             this.btnGuardarXml.UseVisualStyleBackColor = false;
@@ -204,9 +304,9 @@ namespace Formularios
             this.btnGuardarCambios.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCambios.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(385, 496);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(428, 393);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(98, 51);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(149, 42);
             this.btnGuardarCambios.TabIndex = 13;
             this.btnGuardarCambios.Text = "Guardar Cambios Json";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
@@ -219,9 +319,9 @@ namespace Formularios
             this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEditar.Location = new System.Drawing.Point(460, 409);
+            this.btnEditar.Location = new System.Drawing.Point(507, 341);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(166, 29);
+            this.btnEditar.Size = new System.Drawing.Size(288, 29);
             this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -245,9 +345,10 @@ namespace Formularios
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(409, 475);
+            this.lblMensaje.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMensaje.Location = new System.Drawing.Point(50, 549);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(0, 15);
+            this.lblMensaje.Size = new System.Drawing.Size(0, 20);
             this.lblMensaje.TabIndex = 23;
             // 
             // label8
@@ -276,7 +377,7 @@ namespace Formularios
             this.btnGuardarEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGuardarEdit.Location = new System.Drawing.Point(119, 444);
             this.btnGuardarEdit.Name = "btnGuardarEdit";
-            this.btnGuardarEdit.Size = new System.Drawing.Size(83, 45);
+            this.btnGuardarEdit.Size = new System.Drawing.Size(83, 44);
             this.btnGuardarEdit.TabIndex = 9;
             this.btnGuardarEdit.Text = "GuardarEdit";
             this.btnGuardarEdit.UseVisualStyleBackColor = false;
@@ -303,11 +404,11 @@ namespace Formularios
             // dgvListarSinFruto
             // 
             this.dgvListarSinFruto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListarSinFruto.Location = new System.Drawing.Point(324, 50);
+            this.dgvListarSinFruto.Location = new System.Drawing.Point(296, 86);
             this.dgvListarSinFruto.Name = "dgvListarSinFruto";
             this.dgvListarSinFruto.ReadOnly = true;
             this.dgvListarSinFruto.RowTemplate.Height = 25;
-            this.dgvListarSinFruto.Size = new System.Drawing.Size(447, 339);
+            this.dgvListarSinFruto.Size = new System.Drawing.Size(678, 239);
             this.dgvListarSinFruto.TabIndex = 15;
             // 
             // label6
@@ -415,7 +516,7 @@ namespace Formularios
             this.btnAlta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAlta.Location = new System.Drawing.Point(16, 444);
             this.btnAlta.Name = "btnAlta";
-            this.btnAlta.Size = new System.Drawing.Size(85, 46);
+            this.btnAlta.Size = new System.Drawing.Size(85, 44);
             this.btnAlta.TabIndex = 8;
             this.btnAlta.Text = "Agregar Planta";
             this.btnAlta.UseVisualStyleBackColor = false;
@@ -430,7 +531,7 @@ namespace Formularios
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(801, 44);
+            this.pnlSuperior.Size = new System.Drawing.Size(986, 44);
             this.pnlSuperior.TabIndex = 0;
             // 
             // label10
@@ -456,7 +557,7 @@ namespace Formularios
             // btnClose
             // 
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(733, 12);
+            this.btnClose.Location = new System.Drawing.Point(956, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(23, 26);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -468,15 +569,21 @@ namespace Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 569);
+            this.ClientSize = new System.Drawing.Size(986, 590);
             this.Controls.Add(this.pnlPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmListarPlantaSinFruto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgregarPlanta";
+            this.Text = "Plantas Sin Frutos";
             this.Load += new System.EventHandler(this.FrmListarPlantaSinFruto_Load);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarSinFruto)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
@@ -523,5 +630,13 @@ namespace Formularios
         private System.Windows.Forms.Button btnGuardarXml;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblEvento;
+        private System.Windows.Forms.PictureBox pb3;
+        private System.Windows.Forms.PictureBox pb2;
+        private System.Windows.Forms.PictureBox pb1;
+        private System.Windows.Forms.PictureBox pb5;
+        private System.Windows.Forms.PictureBox pb4;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Label lblCargando;
     }
 }

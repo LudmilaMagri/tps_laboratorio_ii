@@ -31,6 +31,8 @@ namespace Formularios
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuPrincipal));
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pbGif = new System.Windows.Forms.PictureBox();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.btnFiltros = new System.Windows.Forms.Button();
             this.btnPlantaMusgo = new System.Windows.Forms.Button();
             this.btnPlantaConFruto = new System.Windows.Forms.Button();
@@ -39,6 +41,7 @@ namespace Formularios
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.pnlPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -46,7 +49,9 @@ namespace Formularios
             // 
             // pnlPrincipal
             // 
-            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(235)))), ((int)(((byte)(224)))));
+            this.pnlPrincipal.BackColor = System.Drawing.Color.White;
+            this.pnlPrincipal.Controls.Add(this.pbGif);
+            this.pnlPrincipal.Controls.Add(this.lblMensaje);
             this.pnlPrincipal.Controls.Add(this.btnFiltros);
             this.pnlPrincipal.Controls.Add(this.btnPlantaMusgo);
             this.pnlPrincipal.Controls.Add(this.btnPlantaConFruto);
@@ -59,14 +64,35 @@ namespace Formularios
             this.pnlPrincipal.Size = new System.Drawing.Size(689, 484);
             this.pnlPrincipal.TabIndex = 0;
             // 
+            // pbGif
+            // 
+            this.pbGif.Image = ((System.Drawing.Image)(resources.GetObject("pbGif.Image")));
+            this.pbGif.Location = new System.Drawing.Point(209, 379);
+            this.pbGif.Name = "pbGif";
+            this.pbGif.Size = new System.Drawing.Size(246, 102);
+            this.pbGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbGif.TabIndex = 7;
+            this.pbGif.TabStop = false;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMensaje.Location = new System.Drawing.Point(281, 353);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(0, 23);
+            this.lblMensaje.TabIndex = 6;
+            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // btnFiltros
             // 
             this.btnFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(205)))), ((int)(((byte)(163)))));
             this.btnFiltros.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnFiltros.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltros.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnFiltros.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnFiltros.Location = new System.Drawing.Point(174, 330);
+            this.btnFiltros.Location = new System.Drawing.Point(172, 306);
             this.btnFiltros.Name = "btnFiltros";
             this.btnFiltros.Size = new System.Drawing.Size(326, 40);
             this.btnFiltros.TabIndex = 5;
@@ -80,6 +106,7 @@ namespace Formularios
             this.btnPlantaMusgo.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPlantaMusgo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPlantaMusgo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlantaMusgo.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPlantaMusgo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPlantaMusgo.Location = new System.Drawing.Point(489, 218);
             this.btnPlantaMusgo.Name = "btnPlantaMusgo";
@@ -95,10 +122,11 @@ namespace Formularios
             this.btnPlantaConFruto.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPlantaConFruto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPlantaConFruto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlantaConFruto.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPlantaConFruto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPlantaConFruto.Location = new System.Drawing.Point(275, 218);
+            this.btnPlantaConFruto.Location = new System.Drawing.Point(270, 218);
             this.btnPlantaConFruto.Name = "btnPlantaConFruto";
-            this.btnPlantaConFruto.Size = new System.Drawing.Size(127, 40);
+            this.btnPlantaConFruto.Size = new System.Drawing.Size(140, 40);
             this.btnPlantaConFruto.TabIndex = 3;
             this.btnPlantaConFruto.Text = "Plantas Con Fruto";
             this.btnPlantaConFruto.UseVisualStyleBackColor = false;
@@ -110,6 +138,7 @@ namespace Formularios
             this.btnPlantaSinFruto.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnPlantaSinFruto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPlantaSinFruto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlantaSinFruto.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPlantaSinFruto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPlantaSinFruto.Location = new System.Drawing.Point(49, 218);
             this.btnPlantaSinFruto.Name = "btnPlantaSinFruto";
@@ -157,11 +186,15 @@ namespace Formularios
             this.ClientSize = new System.Drawing.Size(689, 484);
             this.Controls.Add(this.pnlPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Menu Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
@@ -179,6 +212,8 @@ namespace Formularios
         private System.Windows.Forms.Button btnPlantaSinFruto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnFiltros;
+        private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.PictureBox pbGif;
     }
 }
 

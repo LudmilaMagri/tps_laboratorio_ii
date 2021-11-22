@@ -11,8 +11,6 @@ namespace TestConsola
             List<PlantaConFruto> listaConFrutos = new List<PlantaConFruto>();
             
             listaConFrutos = CargaDeDatos.RetornarListaConFruto();
-
-
             foreach (PlantaConFruto item in listaConFrutos)
             {
                 if(item != null)
@@ -29,6 +27,8 @@ namespace TestConsola
             List<PlantaConFruto> listaFiltrada = new List<PlantaConFruto>();
 
             listaFiltrada = PlantaConFruto.FiltrarFruto(listaConFrutos, fruto);
+            float resultado = PlantaConFruto.PorcentajeDeFrutos(listaFiltrada, listaConFrutos, fruto);
+
 
 
             Console.WriteLine(" ");
@@ -47,10 +47,11 @@ namespace TestConsola
                 Console.WriteLine("\n*******************************************");
             }
 
-            if (Archivos<List<PlantaConFruto>>.EscribirXml(listaFiltrada, "Lista_Filtrada_Test_Consola"))
+            if(PlantaConFruto.EscribirTxtPorcentaje(listaFiltrada, "Lista_Filtrada_Test_Consola", resultado))
             {
                 Console.WriteLine("Archivos guardados correctamente");
             }
+
             else
             {
                 Console.WriteLine("Error al guardar archivos");
