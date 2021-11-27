@@ -135,27 +135,6 @@ namespace Entidades
             }
         }
 
-        /// <summary>
-        /// Comprueba si el nombre del archivo pasado por parametro existe. 
-        /// Si no existe, crea uno nuevo con la conexión hardcodeada.
-        /// Si existe, lee la conexión.
-        /// </summary>
-        /// <param name="nombre"></param>
-        public static void ArchivoACheckearConnection(string nombre)
-        {
-            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string connection = @"Server= PC-LUDMILA\SQLEXPRESS;Database=TP4_MAGRI_LUDMILA;Trusted_Connection=True;";
-            ruta += @"\Archivos\";
-            string nombreArchivo = ruta + $"{nombre}" + ".xml";
-            if (!File.Exists(nombreArchivo))
-            {
-                Archivos<string>.EscribirXml(connection, "SqlConnection");
-            }
-            else
-            {
-                connection = Archivos<string>.LeerXmlSqlConnection("SqlConnection");
-            }
-        }
 
     }
 }

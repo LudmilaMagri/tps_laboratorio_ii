@@ -15,7 +15,7 @@ namespace Entidades
 
         static Conexion_DB()
         {
-            conexion = new SqlConnection(@"Server= PC-LUDMILA\SQLEXPRESS;Database=TP4_MAGRI_LUDMILA;Trusted_Connection=True;"); 
+            conexion = new SqlConnection(@"Server=.\SQLEXPRESS;Database=TP4_MAGRI_LUDMILA;Trusted_Connection=True;"); 
             comando = new SqlCommand();
             comando.CommandType = System.Data.CommandType.Text; 
             comando.Connection = conexion; 

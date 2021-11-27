@@ -55,10 +55,6 @@ namespace Entidades
 
             return porcentajeTotal;
         }
-        //public static float ReporteOrigenCompleto(List<PlantaConFruto> listPlantaConFrutos, List<PlantaSinFruto> listPlantaSinFrutos, List<PlantaMusgo> listPlantaMusgos, string seleccion)
-        //{
-        //    List<PlantaConFruto> listaFiltrada = FiltrarPorOrigen(listPlantaConFrutos, seleccion);
-        //}
 
         /// <summary>
         /// Calcula el porcentaje por el tipo de planta 

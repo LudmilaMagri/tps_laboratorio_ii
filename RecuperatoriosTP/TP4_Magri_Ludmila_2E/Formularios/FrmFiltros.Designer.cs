@@ -109,7 +109,7 @@ namespace Formularios
             this.dgvMostrarConFruto.ReadOnly = true;
             this.dgvMostrarConFruto.RowTemplate.Height = 25;
             this.dgvMostrarConFruto.Size = new System.Drawing.Size(507, 162);
-            this.dgvMostrarConFruto.TabIndex = 15;
+            this.dgvMostrarConFruto.TabIndex = 30;
             // 
             // cmbOrigen
             // 
@@ -134,7 +134,7 @@ namespace Formularios
             this.dgvSinFruto.ReadOnly = true;
             this.dgvSinFruto.RowTemplate.Height = 25;
             this.dgvSinFruto.Size = new System.Drawing.Size(507, 162);
-            this.dgvSinFruto.TabIndex = 16;
+            this.dgvSinFruto.TabIndex = 31;
             // 
             // dgvMusgos
             // 
@@ -145,7 +145,7 @@ namespace Formularios
             this.dgvMusgos.ReadOnly = true;
             this.dgvMusgos.RowTemplate.Height = 25;
             this.dgvMusgos.Size = new System.Drawing.Size(507, 162);
-            this.dgvMusgos.TabIndex = 17;
+            this.dgvMusgos.TabIndex = 32;
             // 
             // btnEsporas
             // 
@@ -156,7 +156,7 @@ namespace Formularios
             this.btnEsporas.Location = new System.Drawing.Point(615, 282);
             this.btnEsporas.Name = "btnEsporas";
             this.btnEsporas.Size = new System.Drawing.Size(149, 29);
-            this.btnEsporas.TabIndex = 13;
+            this.btnEsporas.TabIndex = 16;
             this.btnEsporas.Text = "Max Esporas";
             this.btnEsporas.UseVisualStyleBackColor = false;
             this.btnEsporas.Click += new System.EventHandler(this.btnEsporas_Click);
@@ -206,7 +206,7 @@ namespace Formularios
             this.cmbFlor.Location = new System.Drawing.Point(102, 256);
             this.cmbFlor.Name = "cmbFlor";
             this.cmbFlor.Size = new System.Drawing.Size(121, 23);
-            this.cmbFlor.TabIndex = 7;
+            this.cmbFlor.TabIndex = 10;
             // 
             // btnFlor
             // 
@@ -217,7 +217,7 @@ namespace Formularios
             this.btnFlor.Location = new System.Drawing.Point(89, 284);
             this.btnFlor.Name = "btnFlor";
             this.btnFlor.Size = new System.Drawing.Size(149, 27);
-            this.btnFlor.TabIndex = 8;
+            this.btnFlor.TabIndex = 11;
             this.btnFlor.Text = "Filtrar Flores";
             this.btnFlor.UseVisualStyleBackColor = false;
             this.btnFlor.Click += new System.EventHandler(this.btnFlor_Click);
@@ -306,7 +306,7 @@ namespace Formularios
             this.cmbAltura.Location = new System.Drawing.Point(628, 98);
             this.cmbAltura.Name = "cmbAltura";
             this.cmbAltura.Size = new System.Drawing.Size(121, 23);
-            this.cmbAltura.TabIndex = 10;
+            this.cmbAltura.TabIndex = 7;
             // 
             // btnExportColorFlor
             // 
@@ -318,7 +318,7 @@ namespace Formularios
             this.btnExportColorFlor.Location = new System.Drawing.Point(89, 321);
             this.btnExportColorFlor.Name = "btnExportColorFlor";
             this.btnExportColorFlor.Size = new System.Drawing.Size(149, 45);
-            this.btnExportColorFlor.TabIndex = 9;
+            this.btnExportColorFlor.TabIndex = 12;
             this.btnExportColorFlor.Text = "Exportar Resultados Color Flor";
             this.btnExportColorFlor.UseVisualStyleBackColor = false;
             this.btnExportColorFlor.Click += new System.EventHandler(this.btnExportColorFlor_Click);
@@ -348,7 +348,7 @@ namespace Formularios
             this.btnExportAlturaMax.Location = new System.Drawing.Point(615, 165);
             this.btnExportAlturaMax.Name = "btnExportAlturaMax";
             this.btnExportAlturaMax.Size = new System.Drawing.Size(149, 45);
-            this.btnExportAlturaMax.TabIndex = 12;
+            this.btnExportAlturaMax.TabIndex = 9;
             this.btnExportAlturaMax.Text = "Exportar Resultados Altura Max";
             this.btnExportAlturaMax.UseVisualStyleBackColor = false;
             this.btnExportAlturaMax.Click += new System.EventHandler(this.btnExportAlturaMax_Click);
@@ -415,7 +415,7 @@ namespace Formularios
             this.button3.Location = new System.Drawing.Point(615, 128);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 27);
-            this.button3.TabIndex = 11;
+            this.button3.TabIndex = 8;
             this.button3.Text = "Altura Maxima";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.btnAltura_Click);
@@ -438,7 +438,7 @@ namespace Formularios
             this.btnExportEsporas.Location = new System.Drawing.Point(615, 317);
             this.btnExportEsporas.Name = "btnExportEsporas";
             this.btnExportEsporas.Size = new System.Drawing.Size(149, 45);
-            this.btnExportEsporas.TabIndex = 14;
+            this.btnExportEsporas.TabIndex = 17;
             this.btnExportEsporas.Text = "Exportar Resultados Max Esporas";
             this.btnExportEsporas.UseVisualStyleBackColor = false;
             this.btnExportEsporas.Click += new System.EventHandler(this.btnExportEsporas_Click);
@@ -487,7 +487,7 @@ namespace Formularios
             this.cmbTipoPlanta.Location = new System.Drawing.Point(362, 249);
             this.cmbTipoPlanta.Name = "cmbTipoPlanta";
             this.cmbTipoPlanta.Size = new System.Drawing.Size(121, 23);
-            this.cmbTipoPlanta.TabIndex = 32;
+            this.cmbTipoPlanta.TabIndex = 13;
             // 
             // btnExportPorcentaje
             // 
@@ -498,7 +498,7 @@ namespace Formularios
             this.btnExportPorcentaje.Location = new System.Drawing.Point(349, 321);
             this.btnExportPorcentaje.Name = "btnExportPorcentaje";
             this.btnExportPorcentaje.Size = new System.Drawing.Size(149, 45);
-            this.btnExportPorcentaje.TabIndex = 34;
+            this.btnExportPorcentaje.TabIndex = 15;
             this.btnExportPorcentaje.Text = "Exportar Resultados Porcentaje";
             this.btnExportPorcentaje.UseVisualStyleBackColor = false;
             this.btnExportPorcentaje.Click += new System.EventHandler(this.btnExportPorcentaje_Click);
@@ -512,7 +512,7 @@ namespace Formularios
             this.btnPorcentajeTipoPlanta.Location = new System.Drawing.Point(349, 284);
             this.btnPorcentajeTipoPlanta.Name = "btnPorcentajeTipoPlanta";
             this.btnPorcentajeTipoPlanta.Size = new System.Drawing.Size(149, 27);
-            this.btnPorcentajeTipoPlanta.TabIndex = 33;
+            this.btnPorcentajeTipoPlanta.TabIndex = 14;
             this.btnPorcentajeTipoPlanta.Text = "Porcentaje";
             this.btnPorcentajeTipoPlanta.UseVisualStyleBackColor = false;
             this.btnPorcentajeTipoPlanta.Click += new System.EventHandler(this.btnPorcentajeTipoPlanta_Click);
@@ -526,7 +526,7 @@ namespace Formularios
             this.btnRefresh.Location = new System.Drawing.Point(892, 689);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(409, 29);
-            this.btnRefresh.TabIndex = 36;
+            this.btnRefresh.TabIndex = 24;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -544,7 +544,7 @@ namespace Formularios
             this.cmbReporteFruto.Location = new System.Drawing.Point(162, 474);
             this.cmbReporteFruto.Name = "cmbReporteFruto";
             this.cmbReporteFruto.Size = new System.Drawing.Size(121, 23);
-            this.cmbReporteFruto.TabIndex = 37;
+            this.cmbReporteFruto.TabIndex = 18;
             // 
             // label11
             // 
@@ -560,7 +560,7 @@ namespace Formularios
             this.txtAltura.Location = new System.Drawing.Point(162, 517);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(121, 23);
-            this.txtAltura.TabIndex = 39;
+            this.txtAltura.TabIndex = 19;
             // 
             // Altura
             // 
@@ -580,7 +580,7 @@ namespace Formularios
             this.btnReporteFruto.Location = new System.Drawing.Point(162, 560);
             this.btnReporteFruto.Name = "btnReporteFruto";
             this.btnReporteFruto.Size = new System.Drawing.Size(121, 28);
-            this.btnReporteFruto.TabIndex = 41;
+            this.btnReporteFruto.TabIndex = 20;
             this.btnReporteFruto.Text = "Seleccionar";
             this.btnReporteFruto.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReporteFruto.UseVisualStyleBackColor = false;
@@ -615,7 +615,7 @@ namespace Formularios
             this.btnReporteColor.Location = new System.Drawing.Point(515, 560);
             this.btnReporteColor.Name = "btnReporteColor";
             this.btnReporteColor.Size = new System.Drawing.Size(121, 28);
-            this.btnReporteColor.TabIndex = 48;
+            this.btnReporteColor.TabIndex = 23;
             this.btnReporteColor.Text = "Seleccionar";
             this.btnReporteColor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReporteColor.UseVisualStyleBackColor = false;
@@ -635,7 +635,7 @@ namespace Formularios
             this.txtAgua.Location = new System.Drawing.Point(515, 517);
             this.txtAgua.Name = "txtAgua";
             this.txtAgua.Size = new System.Drawing.Size(121, 23);
-            this.txtAgua.TabIndex = 46;
+            this.txtAgua.TabIndex = 22;
             // 
             // cmbReporteColor
             // 
@@ -651,7 +651,7 @@ namespace Formularios
             this.cmbReporteColor.Location = new System.Drawing.Point(515, 474);
             this.cmbReporteColor.Name = "cmbReporteColor";
             this.cmbReporteColor.Size = new System.Drawing.Size(121, 23);
-            this.cmbReporteColor.TabIndex = 44;
+            this.cmbReporteColor.TabIndex = 21;
             // 
             // label14
             // 
