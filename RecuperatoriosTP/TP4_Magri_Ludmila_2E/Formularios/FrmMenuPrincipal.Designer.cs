@@ -96,7 +96,7 @@ namespace Formularios
             this.btnFiltros.Name = "btnFiltros";
             this.btnFiltros.Size = new System.Drawing.Size(326, 40);
             this.btnFiltros.TabIndex = 5;
-            this.btnFiltros.Text = "Filtrar";
+            this.btnFiltros.Text = "Filtros y Reportes";
             this.btnFiltros.UseVisualStyleBackColor = false;
             this.btnFiltros.Click += new System.EventHandler(this.btnFiltros_Click);
             // 
