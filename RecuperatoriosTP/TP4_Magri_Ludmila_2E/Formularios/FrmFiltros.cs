@@ -466,6 +466,8 @@ namespace Formularios
                         "El " + porcentajeEuropa + "% son de Europa.\n" +
                         "El " + porcentajeNativa + "% son Nativas.\n";
                     PlantaConFruto.EscribirTxtReporte(auxLista, "Reporte_Fruto", porcentajeDeFrutos, resultado, porcentajeAmerica, porcentajeAsia, porcentajeNativa, porcentajeEuropa, cmbReporteFruto.Text, float.Parse(txtAltura.Text));
+                    dgvMostrarConFruto.DataSource = null;
+                    dgvMostrarConFruto.DataSource = auxLista;
                 }
                 else
                 {
@@ -529,6 +531,8 @@ namespace Formularios
                         "El " + porcentajeEuropa + "% son de Europa.\n" +
                         "El " + porcentajeNativa + "% son Nativas.\n"; ;
                     PlantaConFruto.EscribirTxtReporte(auxLista, "Reporte_Color_Flor", porcentajeDeColorFlor, resultado, porcentajeAmerica, porcentajeAsia, porcentajeNativa, porcentajeEuropa, cmbReporteColor.Text, float.Parse(txtAgua.Text));
+                    dgvMostrarConFruto.DataSource = null;
+                    dgvMostrarConFruto.DataSource = auxLista;
                 }
             }
             else
