@@ -305,10 +305,12 @@ namespace Formularios
         private void btnPorcentajeTipoPlanta_Click(object sender, EventArgs e)
         {
             float resultado = 0;
-            if(cmbTipoPlanta.SelectedItem != null)
-            resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
-
-            lblMensaje.Text = "El porcentaje de Plantas " +cmbTipoPlanta.SelectedItem.ToString()+ " es: " + resultado + "%";
+            if (cmbTipoPlanta.SelectedItem != null)
+            {
+                resultado = FiltrosGenericos.PorcentajeDeTipoPlanta(listaConFrutos, listaSinFrutos, listaMusgos, cmbTipoPlanta.Text);
+                lblMensaje.Text = "El porcentaje de Plantas " + cmbTipoPlanta.SelectedItem.ToString() + " es: " + resultado + "%";
+            }
+            
         }
 
         private void btnExportPorcentaje_Click(object sender, EventArgs e)
